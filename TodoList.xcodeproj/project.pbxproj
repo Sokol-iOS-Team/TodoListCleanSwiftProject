@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		711F251B29BDEACD0034F3CF /* TodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711F251A29BDEACD0034F3CF /* TodoListTests.swift */; };
+		E78A514A29BDEEA700D24793 /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78A514929BDEEA700D24793 /* TaskManagerTests.swift */; };
 		F551A17C29B9CF9500C006AF /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A17B29B9CF9500C006AF /* LoginRouter.swift */; };
 		F551A19229B9CFEB00C006AF /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A18429B9CFEB00C006AF /* TodoListViewController.swift */; };
 		F551A19329B9CFEB00C006AF /* TodoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A18529B9CFEB00C006AF /* TodoListPresenter.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		711F251829BDEACD0034F3CF /* TodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		711F251A29BDEACD0034F3CF /* TodoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTests.swift; sourceTree = "<group>"; };
+		E78A514929BDEEA700D24793 /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
 		F551A17B29B9CF9500C006AF /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		F551A18429B9CFEB00C006AF /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		F551A18529B9CFEB00C006AF /* TodoListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		711F251929BDEACD0034F3CF /* TodoListTests */ = {
 			isa = PBXGroup;
 			children = (
+				E78A514929BDEEA700D24793 /* TaskManagerTests.swift */,
 				711F251A29BDEACD0034F3CF /* TodoListTests.swift */,
 			);
 			path = TodoListTests;
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78A514A29BDEEA700D24793 /* TaskManagerTests.swift in Sources */,
 				711F251B29BDEACD0034F3CF /* TodoListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
