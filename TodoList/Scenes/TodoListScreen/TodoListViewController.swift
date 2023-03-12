@@ -47,7 +47,7 @@ final class TodoListViewController: UITableViewController {
 		
 		switch taskData {
 		case .importantTask(let task):
-			let redText = [NSAttributedString.Key.foregroundColor:  UIColor.red]
+			let redText = [NSAttributedString.Key.foregroundColor: UIColor.red]
 			let taskText = NSMutableAttributedString(string: "\(task.priority) ", attributes: redText )
 			taskText.append(NSAttributedString(string: task.name))
 			
