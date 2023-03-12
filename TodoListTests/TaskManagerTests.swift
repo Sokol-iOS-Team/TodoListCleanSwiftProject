@@ -10,7 +10,7 @@ import XCTest
 
 final class TaskManagerTests: XCTestCase {
 	
-	var sut: ITaskManager!
+	var sut: TaskManager!
 	var taskRepository: ITaskRepository!
 	
 	override func setUp() {
@@ -75,5 +75,46 @@ final class TaskManagerTests: XCTestCase {
 		sut.addTasks(tasks: taskRepository.getTasks())
 		
 		XCTAssertTrue((sut.uncompletedTasks().filter { $0.isComplete == true }.isEmpty ), "Tasks have completed task")
+	}
+	
+	func testAddTaskShouldIReturnTaskCountPlusOneWhenAddOneTask() {
+		let taskCount = sut.allTasks().count
+		let task = RegularTask(title: "Task", isComplete: false)
+		sut.addTask(task: task)
+		
+		XCTAssert(sut.allTasks().count == taskCount + 1, "Test failed: Number of tasks must be increased by one when one task added")
+	}
+	
+	func testAddTaskShouldIReturnTrueWhenCallConteinWithAddedTask() {
+		let task = RegularTask(title: "Task", isComplete: false)
+		sut.addTask(task: task)
+		
+		XCTAssert(sut.allTasks().contains { $0 === task }, "TaskManager should contain added task")
+	}
+	
+	func testAddTasksShouldBeReturnCountOfAddedTasksWhenAddArrayOfTasks() {
+		let taskCount = taskRepository.getTasks().count
+		
+		sut.addTasks(tasks: taskRepository.getTasks())
+		
+		XCTAssert(sut.allTasks().count == taskCount, "Test failed: Number of tasks must be equal added tasks array count")
+	}
+	
+	func testRemoveTaskShouldBeReturn0CountWhenTaskRemoved() {
+		let task = RegularTask(title: "Task", isComplete: false)
+		sut.addTask(task: task)
+		
+		sut.removeTask(task: task)
+		
+		XCTAssert(sut.allTasks().count == 0, "Test failed: Number of tasks must be 0")
+	}
+	
+	func testRemoveTaskShouldBeReturnFalseWhenCallConteinWithRemovedTask() {
+		let task = RegularTask(title: "Task", isComplete: false)
+		sut.addTask(task: task)
+		
+		sut.removeTask(task: task)
+		
+		XCTAssert(!sut.allTasks().contains { $0 === task }, "Test failed: TaskManager should not contain removed task")
 	}
 }
