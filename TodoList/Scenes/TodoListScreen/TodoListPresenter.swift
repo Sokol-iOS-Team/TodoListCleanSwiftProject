@@ -34,7 +34,7 @@ class TodoListPresenter: ITodoListPresenter {
 	}
 	
 	private func mapTasksData(tasks: [Task]) -> [TodoListModel.ViewModel.Task] {
-		tasks.map{ mapTaskData(task: $0) }
+		tasks.map { mapTaskData(task: $0) }
 	}
 	
 	private func mapTaskData(task: Task) -> TodoListModel.ViewModel.Task {
