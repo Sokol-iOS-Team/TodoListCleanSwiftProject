@@ -14,10 +14,10 @@ protocol ILoginViewController: AnyObject {
 class LoginViewController: UIViewController {
 	var interactor: ILoginInteractor?
 	var router: ILoginRouter?
-	
-	@IBOutlet weak var textFieldLogin: UITextField!
-	@IBOutlet weak var textFieldPass: UITextField!
-	@IBAction func buttonLogin(_ sender: Any) {
+
+	@IBOutlet private weak var textFieldLogin: UITextField!
+	@IBOutlet private weak var textFieldPass: UITextField!
+	@IBAction private func buttonLogin(_ sender: Any) {
 		if let email = textFieldLogin.text, let password = textFieldPass.text {
 			let request = LoginModels.Request(login: email, password: password)
 			interactor?.login(request: request)

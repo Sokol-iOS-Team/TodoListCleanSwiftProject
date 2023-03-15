@@ -9,33 +9,32 @@ import XCTest
 @testable import TodoList
 
 final class RegularTaskTests: XCTestCase {
-	
+
 	var task: RegularTask?
-	
+
 	override func setUp() {
 		super.setUp()
 		task = RegularTask(title: "do tests")
 	}
-	
-	override func tearDown()  {
+
+	override func tearDown() {
 		task = nil
 		super.tearDown()
 	}
-	
+
 	func testChangeTitleShouldBeNotEqualWhenGetNewValue() {
 		let taskTitle = task?.title
 		task?.title = "do unit tests"
 		XCTAssertNotEqual(task?.title, taskTitle)
 	}
-	
+
 	func testIsCompleteShouldBeNotEqualWhenGetNewValue() {
 		let isComplete = task?.isComplete
 		task?.isComplete.toggle()
 		XCTAssertNotEqual(task?.isComplete, isComplete)
 	}
-	
+
 	func testIsCompleteShouldBeEqualFalse() {
 		XCTAssertEqual(task?.isComplete, false)
 	}
-	
 }
