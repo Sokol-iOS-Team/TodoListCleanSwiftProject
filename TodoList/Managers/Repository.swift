@@ -4,6 +4,7 @@
 //
 //  Created by Kirill Leonov on 20.02.2023.
 //
+import TaskManagerPackage
 
 protocol ITaskRepository {
 	func getTasks() -> [Task]
