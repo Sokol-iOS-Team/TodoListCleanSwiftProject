@@ -12,11 +12,11 @@ enum LoginModels {
 		var login: String
 		var password: String
 	}
-	
+
 	struct Response {
 		var success: Bool
 	}
-	
+
 	enum ViewModel {
 		case success
 		case failure(String)

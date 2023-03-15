@@ -15,12 +15,12 @@ final class LoginAssembler {
 		else {
 			fatalError("Нету на Main.storyboard LoginViewController!")
 		}
-		
+
 		let presenter = LoginPresenter(viewController: viewController)
 		let worker = LoginWorker()
 		let interactor = LoginInteractor(worker: worker, presenter: presenter)
 		viewController.interactor = interactor
-		
+
 		return viewController
 	}
 }

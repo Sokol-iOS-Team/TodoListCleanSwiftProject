@@ -65,7 +65,6 @@ final class ImportantTaskTests: XCTestCase {
 		sut.isComplete = true
 
 		XCTAssertTrue(sut.isComplete, "isComplete should be true")
-
 	}
 
 	func test_changeTaskPriority_shouldBeCorrect() {
@@ -76,5 +75,4 @@ final class ImportantTaskTests: XCTestCase {
 
 		XCTAssertEqual(sut.taskPriority, taskPriority, "TaskPriority isn't changed")
 	}
-
 }
