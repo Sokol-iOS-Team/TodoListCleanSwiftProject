@@ -5,6 +5,8 @@
 //  Created by Kirill Leonov on 20.02.2023.
 //
 
+import TaskManagerPackage
+
 protocol ILoginPresenter {
 	func present(responce: LoginModels.Response)
 }
@@ -19,5 +21,18 @@ class LoginPresenter: ILoginPresenter {
 	func present(responce: LoginModels.Response) {
 		let viewModel: LoginModels.ViewModel = responce.success ? .success : .failure("Неверный логин или пароль.")
 		viewController?.render(viewModel: viewModel)
+	}
+}
+
+extension ImportantTask.TaskPriority: CustomStringConvertible {
+	public var description: String {
+		switch self {
+		case .high:
+			return "!!!"
+		case .medium:
+			return "!!"
+		case .low:
+			return "!"
+		}
 	}
 }
