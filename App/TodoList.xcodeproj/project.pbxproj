@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		713189EB29C376F500ADE900 /* RegularTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713189EA29C376F400ADE900 /* RegularTaskTests.swift */; };
 		E0A3169029C23A9E005A0400 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = E0A3168F29C23A9E005A0400 /* TaskManagerPackage */; };
 		F551A17C29B9CF9500C006AF /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A17B29B9CF9500C006AF /* LoginRouter.swift */; };
 		F551A19229B9CFEB00C006AF /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A18429B9CFEB00C006AF /* TodoListViewController.swift */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		711F251829BDEACD0034F3CF /* TodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		713189EA29C376F400ADE900 /* RegularTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularTaskTests.swift; sourceTree = "<group>"; };
 		713189EC29C377A100ADE900 /* Framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Framework; path = ../Framework; sourceTree = "<group>"; };
 		F551A17B29B9CF9500C006AF /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		F551A18429B9CFEB00C006AF /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -86,14 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		711F251929BDEACD0034F3CF /* TodoListTests */ = {
-			isa = PBXGroup;
-			children = (
-				713189EA29C376F400ADE900 /* RegularTaskTests.swift */,
-			);
-			path = TodoListTests;
-			sourceTree = "<group>";
-		};
 		E0A3168E29C23A9E005A0400 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				F5DAE3BC29A3D29C0054AC5C /* TodoList */,
-				711F251929BDEACD0034F3CF /* TodoListTests */,
 				F5DAE3BB29A3D29C0054AC5C /* Products */,
 				E0FCBADA29C239E90036EAAC /* Packages */,
 				E0A3168E29C23A9E005A0400 /* Frameworks */,
@@ -332,7 +321,6 @@
 				F551A1A929B9EA7100C006AF /* TodoListAssembler.swift in Sources */,
 				F5DAE3C029A3D29C0054AC5C /* SceneDelegate.swift in Sources */,
 				F551A19229B9CFEB00C006AF /* TodoListViewController.swift in Sources */,
-				713189EB29C376F500ADE900 /* RegularTaskTests.swift in Sources */,
 				F551A19329B9CFEB00C006AF /* TodoListPresenter.swift in Sources */,
 				F551A1AB29BA1E9900C006AF /* TodoListInteractor.swift in Sources */,
 				F551A17C29B9CF9500C006AF /* LoginRouter.swift in Sources */,
