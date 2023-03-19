@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		711F251829BDEACD0034F3CF /* TodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0FCBADB29C239E90036EAAC /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaskManagerPackage; path = ../Framework/Packages/TaskManagerPackage; sourceTree = "<group>"; };
+		713189EC29C377A100ADE900 /* Framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Framework; path = ../Framework; sourceTree = "<group>"; };
 		F551A17B29B9CF9500C006AF /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		F551A18429B9CFEB00C006AF /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		F551A18529B9CFEB00C006AF /* TodoListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
@@ -84,13 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		711F251929BDEACD0034F3CF /* TodoListTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TodoListTests;
-			sourceTree = "<group>";
-		};
 		E0A3168E29C23A9E005A0400 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +94,7 @@
 		E0FCBADA29C239E90036EAAC /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				E0FCBADB29C239E90036EAAC /* TaskManagerPackage */,
+				713189EC29C377A100ADE900 /* Framework */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -154,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				F5DAE3BC29A3D29C0054AC5C /* TodoList */,
-				711F251929BDEACD0034F3CF /* TodoListTests */,
 				F5DAE3BB29A3D29C0054AC5C /* Products */,
 				E0FCBADA29C239E90036EAAC /* Packages */,
 				E0A3168E29C23A9E005A0400 /* Frameworks */,
