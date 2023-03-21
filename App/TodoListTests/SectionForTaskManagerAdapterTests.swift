@@ -10,212 +10,122 @@ import XCTest
 @testable import TodoList
 
 final class SectionForTaskManagerAdapterTests: XCTestCase {
+	// MARK: - Internal Methods
+	func test_getSections_shouldBeTwoSectionsAndRightOrdered() {
+		let sut = makeSut()
+		let validSections: [Section] = [.uncompleted, .completed]
 
-    var sut: SectionForTaskManagerAdapter?
-    var taskManager: OrderedTaskManager?
+		let result = sut.getSections()
 
-    enum TaskStub {
-        static var singleTask = RegularTask(
-            title: "SomeTask1",
-            isComplete: false
-        )
-        static var tasks = [
-            RegularTask(
-                title: "SomeRegularTask1",
-                isComplete: false
-            ),
-            RegularTask(
-                title: "SomeRegularTask2",
-                isComplete: false
-            ),
-            RegularTask(
-                title: "SomeRegularTask3",
-                isComplete: true
-            ),
-            RegularTask(
-                title: "SomeRegularTask4",
-                isComplete: true
-            ),
-            ImportantTask(
-                title: "SomeImportantTask1",
-                taskPriority: .high,
-                createDate: Date()
-            ),
-            ImportantTask(
-                title: "SomeImportantTask2",
-                taskPriority: .high,
-                createDate: Date()
-            )
-        ]
-    }
+		XCTAssertTrue(result.count == 2, "Секций больше или меньше двух")
+		XCTAssertEqual(result, validSections, "Порядок секций отличается")
+	}
 
-    override func setUp() {
-        super.setUp()
-        let taskManager = OrderedTaskManager(taskManager: TaskManager())
-        sut = SectionForTaskManagerAdapter(taskManager: taskManager)
-        self.taskManager = taskManager
-    }
+	func test_getSectionIndex_shouldBeOneSectionIndex() {
+		let sut = makeSut()
+		let section: Section = .completed
 
-    override func tearDown() {
-        sut = nil
-        taskManager = nil
-        super.tearDown()
-    }
+		let result = sut.getSectionIndex(section: section)
 
-    func test_getSections_initialState_shouldBeNotEmpty() {
-        XCTAssertFalse(sut?.getSections().isEmpty == true, "Sections must be not empty")
-    }
+		XCTAssertTrue(result == 1, "Неправильный индекс секции")
+	}
 
-    func test_getSections_initialState_shouldBeNotNil() {
-        XCTAssertNotNil(sut?.getSections(), "Sections must be not nil")
-    }
+	func test_getSectionIndex_shouldBeZeroSectionIndex() {
+		let sut = makeSut()
+		let section: Section = .all
 
-    func test_getSections_initialState_shouldGetArrayOfSectionType() {
-        XCTAssertTrue((sut?.getSections() as Any) is [Section], "Sections have another type")
-    }
+		let result = sut.getSectionIndex(section: section)
 
-    func test_getSectionIndex_initialState_shouldBeCompletedNotNil() {
-        let section: Section = .completed
+		XCTAssertTrue(result == 0, "Индекс секции должен быть 0")
+	}
 
-        XCTAssertNotNil(sut?.getSectionIndex(section: section), "Completed section index can't be nil")
-    }
+	func test_getSection_shouldBeCompletedSection() {
+		let sut = makeSut()
 
-    func test_getSectionIndex_initialState_shouldBeUncompletedNotNil() {
-        let section: Section = .uncompleted
+		let result = sut.getSection(forIndex: 1)
 
-        XCTAssertNotNil(sut?.getSectionIndex(section: section), "Uncompleted section index can't be nil")
-    }
+		XCTAssertTrue(result == .completed, "Cекция с индексом 1 должна быть завершенной")
+	}
 
-    func test_getSectionIndex_initialState_shouldGetIntType() {
-        let section = sut?.getSections().first ?? .completed
+	func test_getTasksForSection_shouldBeFourTasksAndOnlyCompleted() {
+		let sut = makeSut()
+		let validTasks = [
+			MockOrderedTaskManager.completedHighImportantTask,
+			MockOrderedTaskManager.completedMediumImportantTask,
+			MockOrderedTaskManager.completedLowImportantTask,
+			MockOrderedTaskManager.completedRegularTask
+		]
 
-        XCTAssertTrue((sut?.getSectionIndex(section: section) as Any) is Int, "Section index must have int type")
-    }
+		let result = sut.getTasksForSection(section: .completed)
 
-    func test_getSectionIndex_initialState_shouldBeEqualCompletedSectionIndex() {
-        let section: Section = .completed
-        let sectionIndex = sut?.getSections().firstIndex(where: { $0 == section })
+		XCTAssertTrue(result.count == 4, "Завершенных задач больше 4 или меньше")
+		XCTAssertEqual(result, validTasks, "Нарушен порядок задач")
+	}
 
-        XCTAssertTrue(
-            sut?.getSectionIndex(section: section) == sectionIndex,
-            "Completed section index is not equal real compelted section index"
-        )
-    }
+	func test_getTasksForSection_shouldBeOnlyUncompletedAndFourTasks() {
+		let sut = makeSut()
+		let validTasks = [
+			MockOrderedTaskManager.uncompletedHighImportantTask,
+			MockOrderedTaskManager.uncompletedMediumImportantTask,
+			MockOrderedTaskManager.uncompletedLowImportantTask,
+			MockOrderedTaskManager.uncompletedRegularTask
+		]
 
-    func test_getSectionIndex_initialState_shouldBeEqualUncompletedSectionIndex() {
-        let section: Section = .uncompleted
-        let sectionIndex = sut?.getSections().firstIndex(where: { $0 == section })
+		let result = sut.getTasksForSection(section: .uncompleted)
 
-        XCTAssertTrue(
-            sut?.getSectionIndex(section: section) == sectionIndex,
-            "Uncompleted section index is not equal real uncompelted section index"
-        )
-    }
+		XCTAssertTrue(result.count == 4, "Количество незавершенных задач отличается от 4")
+		XCTAssertEqual(result, validTasks, "Очередность задач нарушена")
+	}
 
-    func test_getSection_initialState_shouldBeCompletedNotNil() {
-        let section: Section = .completed
-        let sectionIndex = sut?.getSections().firstIndex(where: { $0 == section }) ?? 0
+	func test_getTasksForSection_shouldBeAllTasksAndEightTasks() {
+		let sut = makeSut()
+		let validTasks = [
+			MockOrderedTaskManager.completedHighImportantTask,
+			MockOrderedTaskManager.completedMediumImportantTask,
+			MockOrderedTaskManager.completedLowImportantTask,
+			MockOrderedTaskManager.completedRegularTask,
+			MockOrderedTaskManager.uncompletedHighImportantTask,
+			MockOrderedTaskManager.uncompletedMediumImportantTask,
+			MockOrderedTaskManager.uncompletedLowImportantTask,
+			MockOrderedTaskManager.uncompletedRegularTask
+		]
 
-        XCTAssertNotNil(sut?.getSection(forIndex: sectionIndex), "Completed section can't be nil")
-    }
+		let result = sut.getTasksForSection(section: .all)
 
-    func test_getSection_initialState_shouldBeUncompletedNotNil() {
-        let section: Section = .uncompleted
-        let sectionIndex = sut?.getSections().firstIndex(where: { $0 == section }) ?? 0
+		XCTAssertTrue(result.count == 8, "Размер всех задач не равен 8")
+		XCTAssertEqual(result, validTasks, "При выборке всех задач нарушена очередность")
+	}
 
-        XCTAssertNotNil(sut?.getSection(forIndex: sectionIndex), "Uncompleted section can't be nil")
-    }
+	func test_sectionTitle_withCompletedSection_shouldBeEqualCompletedTitle() {
+		let validTitle = "Completed"
 
-    func test_getSection_initialState_shouldGetSectionType() {
-        let section = sut?.getSections().first ?? .completed
-        let sectionIndex = sut?.getSections().firstIndex(where: { $0 == section }) ?? 0
+		let result: Section = .completed
 
-        XCTAssertTrue((sut?.getSection(forIndex: sectionIndex) as Any) is Section, "Section must have section type")
-    }
+		XCTAssertEqual(result.title, validTitle, "Некорректное название завершенной секции")
+	}
 
-    func test_getSection_initialState_shouldBeEqualCompletedSection() {
-        let section: Section = .completed
-        let sectionIndex = sut?.getSections().firstIndex(where: { $0 == section }) ?? 0
+	func test_sectionTitle_withUncompletedSection_shouldBeEqualUncompletedTitle() {
+		let validTitle = "Uncompleted"
 
-        XCTAssertTrue(
-            sut?.getSection(forIndex: sectionIndex) == section,
-            "Completed section is not equal real compelted section"
-        )
-    }
+		let result: Section = .uncompleted
 
-    func test_getSection_initialState_shouldBeEqualUncompletedSection() {
-        let section: Section = .uncompleted
-        let sectionIndex = sut?.getSections().firstIndex(where: { $0 == section }) ?? 0
+		XCTAssertEqual(result.title, validTitle, "Название незаврешенной секции отличается")
+	}
 
-        XCTAssertTrue(
-            sut?.getSection(forIndex: sectionIndex) == section,
-            "Uncompleted section is not equal real uncompelted section"
-        )
-    }
+	func test_sectionTitle_withAllSection_shouldBeEqualAllTitle() {
+		let validTitle = "All"
 
-    func test_getTasksForSection_initialState_shouldBeCompletedSectionNotNil() {
-        let section: Section = .completed
+		let result: Section = .all
 
-        XCTAssertNotNil(sut?.getTasksForSection(section: section), "Completed section can't be nil")
-    }
+		XCTAssertEqual(result.title, validTitle, "Секция все имеет нерпавильное название")
+	}
+}
 
-    func test_getTasksForSection_initialState_shouldBeUncompletedSectionNotNil() {
-        let section: Section = .uncompleted
-
-        XCTAssertNotNil(sut?.getTasksForSection(section: section), "Uncompleted section can't be nil")
-    }
-
-    func test_getTasksForSection_initialState_shouldBeAllSectionNotNil() {
-        let section: Section = .all
-
-        XCTAssertNotNil(sut?.getTasksForSection(section: section), "All section can't be nil")
-    }
-
-    func test_getTasksForSection_initialState_shouldGetArrayOfTaskType() {
-        let section: Section = .all
-
-        XCTAssertTrue((sut?.getTasksForSection(section: section) as Any) is [Task], "Tasks have another type")
-    }
-
-    func test_getTasksForSection_withTasks_shouldHaveOnlyCompletedTasks() {
-        taskManager?.addTasks(tasks: TaskStub.tasks)
-        let section: Section = .completed
-
-        XCTAssertTrue(
-            sut?.getTasksForSection(section: section).filter { $0.isComplete == false }.isEmpty == true,
-            "Tasks have uncompleted task"
-        )
-    }
-
-    func test_getTasksForSection_withTasks_shouldHaveOnlyUncompletedTasks() {
-        taskManager?.addTasks(tasks: TaskStub.tasks)
-        let section: Section = .uncompleted
-
-        XCTAssertTrue(
-            sut?.getTasksForSection(section: section).filter { $0.isComplete == true }.isEmpty == true,
-            "Tasks have completed task"
-        )
-    }
-
-    func test_taskSectionAndIndex_initialState_shouldBeNil() {
-        let task = TaskStub.singleTask
-
-        XCTAssertNil(sut?.taskSectionAndIndex(task: task), "Tuple must be nil")
-    }
-
-    func test_taskSectionAndIndex_initialState_shouldGetTupleOfSectionAndIndexType() {
-        let task = TaskStub.singleTask
-
-        XCTAssertTrue(
-            (sut?.taskSectionAndIndex(task: task) as Any) is (section: Section, index: Int)?,
-            "Tuple has another type"
-        )
-    }
-
-    func test_taskSectionAndIndex_withTasks_shouldBeNotNil() {
-        let task = TaskStub.singleTask
-        taskManager?.addTasks(tasks: [task])
-
-        XCTAssertNotNil(sut?.taskSectionAndIndex(task: task), "Tuple must be not nil")
-    }
+private extension SectionForTaskManagerAdapterTests {
+	// MARK: - Internal Methods
+	func makeSut() -> SectionForTaskManagerAdapter {
+		let taskManager = MockOrderedTaskManager()
+		let sut = SectionForTaskManagerAdapter(taskManager: taskManager)
+		return sut
+	}
 }
