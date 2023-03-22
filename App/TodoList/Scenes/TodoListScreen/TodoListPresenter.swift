@@ -13,7 +13,7 @@ protocol ITodoListPresenter {
 }
 
 class TodoListPresenter: ITodoListPresenter {
-	private weak var viewController: ITodoListViewController!
+	private weak var viewController: ITodoListViewController! // swiftlint:disable:this implicitly_unwrapped_optional
 
 	init(viewController: ITodoListViewController) {
 		self.viewController = viewController
