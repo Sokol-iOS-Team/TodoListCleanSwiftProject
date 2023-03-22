@@ -10,13 +10,13 @@ import XCTest
 
 final class ImportantTaskTests: XCTestCase {
 
-	func test_initImportatTask_shouldBeCreated() {
+	func test_createImportatTask_shouldBeCreatedSuccessfully() {
 		let sut = ImportantTask(title: "Test task", taskPriority: .low)
 
 		XCTAssertNotNil(sut, "Important task isn't created")
 	}
 
-	func test_initImportatTask_withPriorityAndTitle_shouldBeCorrect() {
+	func test_createImportatTask_withPriorityAndTitle_priorityAndTitleShouldBeSetCorrectly() {
 		let title = "Test task"
 		let taskPriority = ImportantTask.TaskPriority.low
 
@@ -26,40 +26,37 @@ final class ImportantTaskTests: XCTestCase {
 		XCTAssertEqual(sut.taskPriority, taskPriority, "TaskPriority isn't set correctly")
 	}
 
-	func test_setTaskDeadline_withLowPriority_shouldBeCorrect() {
+	func test_createImportantTask_withLowPriority_deadlineShouldBeIn3Days() {
 		let createDate = Date()
+		let deadline = Calendar.current.date(byAdding: .day, value: 3, to: createDate)
 		let sut = ImportantTask(title: "Test task", taskPriority: .low, createDate: createDate)
 
-		let deadline = Calendar.current.date(byAdding: .day, value: 3, to: createDate)
-
-		XCTAssertEqual(sut.deadLine, deadline, "Deadline is not correct for low priority task")
+		XCTAssertEqual(sut.deadLine, deadline, "Deadline isn't correct (3 days after create date) for low priority")
 	}
 
-	func test_setTaskDeadline_withMediumPriority_shouldBeCorrect() {
+	func test_createImportantTask_withMediumPriority_deadlineShouldBeIn2Days() {
 		let createDate = Date()
+		let deadline = Calendar.current.date(byAdding: .day, value: 2, to: createDate)
 		let sut = ImportantTask(title: "Test task", taskPriority: .medium, createDate: createDate)
 
-		let deadline = Calendar.current.date(byAdding: .day, value: 2, to: createDate)
-
-		XCTAssertEqual(sut.deadLine, deadline, "Deadline is not correct for medium priority task")
+		XCTAssertEqual(sut.deadLine, deadline, "Deadline isn't correct (2 days after create date) for medium priority")
 	}
 
-	func test_setTaskDeadline_withHighPriority_shouldBeCorrect() {
+	func test_createImportantTask_withHighPriority_deadlineShouldBeIn1Days() {
 		let createDate = Date()
+		let deadline = Calendar.current.date(byAdding: .day, value: 1, to: createDate)
 		let sut = ImportantTask(title: "Test task", taskPriority: .high, createDate: createDate)
 
-		let deadline = Calendar.current.date(byAdding: .day, value: 1, to: createDate)
-
-		XCTAssertEqual(sut.deadLine, deadline, "Deadline is not correct for high priority task")
+		XCTAssertEqual(sut.deadLine, deadline, "Deadline isn't correct (1 day after create date) for high priority")
 	}
 
-	func test_setTaskIsComplete_shouldBeFalseByDefault() {
+	func test_createImportantTask_isCompleteShouldBeFalseByDefault() {
 		let sut = ImportantTask(title: "Test task", taskPriority: .low)
 
 		XCTAssertFalse(sut.isComplete, "isComplete should be false by default")
 	}
 
-	func test_setTaskAsCompleted_shouldBeTrue() {
+	func test_isComplete_setTrue_isCompleteShouldBeTrue() {
 		let sut = ImportantTask(title: "Test task", taskPriority: .low)
 
 		sut.isComplete = true
@@ -67,7 +64,7 @@ final class ImportantTaskTests: XCTestCase {
 		XCTAssertTrue(sut.isComplete, "isComplete should be true")
 	}
 
-	func test_changeTaskPriority_shouldBeCorrect() {
+	func test_taskPriority_setNewValue_taskPriorityShouldBeChangedWithNewValue() {
 		let taskPriority = ImportantTask.TaskPriority.low
 		let sut = ImportantTask(title: "Test task", taskPriority: .medium, createDate: Date())
 
