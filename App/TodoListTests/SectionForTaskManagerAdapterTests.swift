@@ -10,8 +10,10 @@ import XCTest
 @testable import TodoList
 
 final class SectionForTaskManagerAdapterTests: XCTestCase {
+
 	// MARK: - Internal Methods
-	func test_getSections_shouldBeTwoSectionsAndRightOrdered() {
+
+	func test_getSections_shouldBeReturnedFirstUncompletedSectionThenCompleted() {
 		let sut = makeSut()
 		let validSections: [Section] = [.uncompleted, .completed]
 
@@ -21,16 +23,25 @@ final class SectionForTaskManagerAdapterTests: XCTestCase {
 		XCTAssertEqual(result, validSections, "Порядок секций отличается")
 	}
 
-	func test_getSectionIndex_shouldBeOneSectionIndex() {
+	func test_getSectionIndex_forUncompletedSectionType_shouldBeReturnedZeroSectionIndex() {
+		let sut = makeSut()
+		let section: Section = .uncompleted
+
+		let result = sut.getSectionIndex(section: section)
+
+		XCTAssertTrue(result == 0, "У незавршенной секции индекс отличный от 0")
+	}
+
+	func test_getSectionIndex_forCompletedSectionType_shouldBeReturnedFirstSectionIndex() {
 		let sut = makeSut()
 		let section: Section = .completed
 
 		let result = sut.getSectionIndex(section: section)
 
-		XCTAssertTrue(result == 1, "Неправильный индекс секции")
+		XCTAssertTrue(result == 1, "Неправильный индекс секции, должен быть 1")
 	}
 
-	func test_getSectionIndex_shouldBeZeroSectionIndex() {
+	func test_getSectionIndex_forAllSectionType_shouldBeReturnedZeroSectionIndex() {
 		let sut = makeSut()
 		let section: Section = .all
 
@@ -39,7 +50,15 @@ final class SectionForTaskManagerAdapterTests: XCTestCase {
 		XCTAssertTrue(result == 0, "Индекс секции должен быть 0")
 	}
 
-	func test_getSection_shouldBeCompletedSection() {
+	func test_getSection_withZeroIndex_shouldBeReturnedUncompletedSection() {
+		let sut = makeSut()
+
+		let result = sut.getSection(forIndex: 0)
+
+		XCTAssertTrue(result == .uncompleted, "Незавершенная секция отличается от индекса 0")
+	}
+
+	func test_getSection_withFirstIndex_shouldBeReturnedCompletedSection() {
 		let sut = makeSut()
 
 		let result = sut.getSection(forIndex: 1)
@@ -122,7 +141,6 @@ final class SectionForTaskManagerAdapterTests: XCTestCase {
 }
 
 private extension SectionForTaskManagerAdapterTests {
-	// MARK: - Internal Methods
 	func makeSut() -> SectionForTaskManagerAdapter {
 		let taskManager = MockOrderedTaskManager()
 		let sut = SectionForTaskManagerAdapter(taskManager: taskManager)
