@@ -15,7 +15,7 @@ protocol ILoginRouter {
 
 final class LoginRouter: ILoginRouter {
 
-	private weak var loginViewController: UIViewController!
+	private weak var loginViewController: UIViewController! // swiftlint:disable:this implicitly_unwrapped_optional
 	private let todoListViewController: UIViewController
 
 	internal init(loginViewController: UIViewController, todoListViewController: UIViewController) {
