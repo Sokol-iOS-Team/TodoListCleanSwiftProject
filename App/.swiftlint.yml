@@ -15,7 +15,7 @@ opt_in_rules:
   - force_unwrapping
   - implicitly_unwrapped_optional
   - joined_default_parameter
-  #- lower_acl_than_parent
+  - lower_acl_than_parent
   - missing_docs
   - modifier_order
   - multiline_arguments
