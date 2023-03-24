@@ -5,14 +5,11 @@
 //  Created by Вадим Гамзаев on 22.03.2023.
 //
 
+@testable import TaskManagerPackage
 import Foundation
 
-public enum TaskStub {
-	static var singleTask = RegularTask(
-			title: "SomeTask1",
-			isComplete: true
-		)
-	static var tasks = [
+enum TaskStub {
+	static let tasks = [
 			RegularTask(
 				title: "SomeRegularTask1",
 				isComplete: false
