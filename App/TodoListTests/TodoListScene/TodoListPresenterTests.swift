@@ -13,11 +13,11 @@ final class TodoListPresenterTests: XCTestCase {
 
 	private let viewController = TodoListViewControllerSpy()
 
-	func test_present_withEmptyResponce_shouldBeRenderSuccess() {
+	func test_present_withEmptyResponse_shouldBeRenderSuccess() {
 		let sut = makeSut()
 		let response = TodoListModel.Response(data: [])
 
-		sut.present(responce: response)
+		sut.present(response: response)
 
 		XCTAssertTrue(viewController.isCalledRender, "Не вызван viewController.render(:)")
 	}
@@ -28,14 +28,14 @@ final class TodoListPresenterTests: XCTestCase {
 		let sectionWithTasks = TodoListModel.Response.SectionWithTasks(section: .completed, tasks: [regularTask])
 		let response = TodoListModel.Response(data: [sectionWithTasks])
 
-		sut.present(responce: response)
+		sut.present(response: response)
 
 		let sectionCount = viewController.viewModel.tasksBySections.count
 		let sectionTitle = viewController.viewModel.tasksBySections[0].title
 		let taskCountInSection = viewController.viewModel.tasksBySections[0].tasks.count
-		XCTAssertEqual(sectionCount, 1, "Ошибка в модели данных: некорретное количество секций")
-		XCTAssertEqual(sectionTitle, "Completed", "Ошибка в модели данных: некорретный заголовок секции")
-		XCTAssertEqual(taskCountInSection, 1, "Ошибка в модели данных: некорретное количество задач в секции")
+		XCTAssertEqual(sectionCount, 1, "Ошибка в модели данных: некорректное количество секций")
+		XCTAssertEqual(sectionTitle, "Completed", "Ошибка в модели данных: некорректный заголовок секции")
+		XCTAssertEqual(taskCountInSection, 1, "Ошибка в модели данных: некорректное количество задач в секции")
 	}
 
 	func test_present_withResponse2UncompletedTasks_shouldBeRenderWith1UncompletedSectionWith2Tasks() {
@@ -48,14 +48,14 @@ final class TodoListPresenterTests: XCTestCase {
 		)
 		let response = TodoListModel.Response(data: [sectionWithTasks])
 
-		sut.present(responce: response)
+		sut.present(response: response)
 
 		let sectionCount = viewController.viewModel.tasksBySections.count
 		let sectionTitle = viewController.viewModel.tasksBySections[0].title
 		let taskCountInSection = viewController.viewModel.tasksBySections[0].tasks.count
-		XCTAssertEqual(sectionCount, 1, "Ошибка в модели данных: некорретное количество секций")
-		XCTAssertEqual(sectionTitle, "Uncompleted", "Ошибка в модели данных: некорретный заголовок секции")
-		XCTAssertEqual(taskCountInSection, 2, "Ошибка в модели данных: некорретное количество задач в секции")
+		XCTAssertEqual(sectionCount, 1, "Ошибка в модели данных: некорректное количество секций")
+		XCTAssertEqual(sectionTitle, "Uncompleted", "Ошибка в модели данных: некорректный заголовок секции")
+		XCTAssertEqual(taskCountInSection, 2, "Ошибка в модели данных: некорректное количество задач в секции")
 	}
 
 	func test_present_withResponse1CompletedRegularTask_shouldBeRenderCompletedRegularTaskCorrectly() {
@@ -64,7 +64,7 @@ final class TodoListPresenterTests: XCTestCase {
 		let sectionWithTasks = TodoListModel.Response.SectionWithTasks(section: .completed, tasks: [regularTask])
 		let response = TodoListModel.Response(data: [sectionWithTasks])
 
-		sut.present(responce: response)
+		sut.present(response: response)
 
 		if let task = viewController.viewModel.tasksBySections[0].tasks.first {
 			switch task {
@@ -72,7 +72,7 @@ final class TodoListPresenterTests: XCTestCase {
 				XCTAssertEqual(
 					regularTaskViewModel.name,
 					"Regular Task",
-					"Ошибка в модели данных: некорретное название задачи"
+					"Ошибка в модели данных: некорректное название задачи"
 				)
 				XCTAssertTrue(
 					regularTaskViewModel.isDone,
@@ -92,7 +92,7 @@ final class TodoListPresenterTests: XCTestCase {
 		let sectionWithTasks = TodoListModel.Response.SectionWithTasks(section: .uncompleted, tasks: [importantTask])
 		let response = TodoListModel.Response(data: [sectionWithTasks])
 
-		sut.present(responce: response)
+		sut.present(response: response)
 
 		if let task = viewController.viewModel.tasksBySections[0].tasks.first {
 			switch task {
@@ -102,7 +102,7 @@ final class TodoListPresenterTests: XCTestCase {
 				XCTAssertEqual(
 					importantTaskViewModel.name,
 					"Important Task",
-					"Ошибка в модели данных: некорретное название задачи"
+					"Ошибка в модели данных: некорректное название задачи"
 				)
 				XCTAssertFalse(
 					importantTaskViewModel.isDone,
