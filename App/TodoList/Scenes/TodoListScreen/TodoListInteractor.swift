@@ -31,7 +31,7 @@ class TodoListInteractor: ITodoListInteractor {
 			responseData.append(sectionWithTasks)
 		}
 		let response = TodoListModel.Response(data: responseData)
-		presenter.present(responce: response)
+		presenter.present(response: response)
 	}
 
 	func didTaskSelected(atIndex index: TodoListModel.Request.TaskSelected) {

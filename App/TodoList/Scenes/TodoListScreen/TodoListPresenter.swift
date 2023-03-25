@@ -9,7 +9,7 @@ import Foundation
 import TaskManagerPackage
 
 protocol ITodoListPresenter {
-	func present(responce: TodoListModel.Response)
+	func present(response: TodoListModel.Response)
 }
 
 class TodoListPresenter: ITodoListPresenter {
@@ -19,9 +19,9 @@ class TodoListPresenter: ITodoListPresenter {
 		self.viewController = viewController
 	}
 
-	func present(responce: TodoListModel.Response) {
+	func present(response: TodoListModel.Response) {
 		var sections = [TodoListModel.ViewModel.Section]()
-		for section in responce.data {
+		for section in response.data {
 			let sectionData = TodoListModel.ViewModel.Section(
 				title: section.section.title,
 				tasks: mapTasksData(tasks: section.tasks )

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		896D55DB29C713F20071CB4B /* LoginWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D55DA29C713F20071CB4B /* LoginWorkerTests.swift */; };
 		896D55DD29C715650071CB4B /* TaskRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D55DC29C715650071CB4B /* TaskRepositoryTests.swift */; };
+		89B7B3F029CEFCBD00E15DC8 /* TodoListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B7B3EF29CEFCBD00E15DC8 /* TodoListPresenterTests.swift */; };
+		89B7B3F329CEFCF500E15DC8 /* TodoListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B7B3F229CEFCF500E15DC8 /* TodoListViewControllerSpy.swift */; };
 		E09C716F29CB1E2A007A2DB1 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = E09C716E29CB1E2A007A2DB1 /* TaskManagerPackage */; };
 		E71EFF0E29C72B7D00A55869 /* SectionForTaskManagerAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71EFF0D29C72B7D00A55869 /* SectionForTaskManagerAdapterTests.swift */; };
 		E7C9F28529CA352500408251 /* MockOrderedTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C9F28429CA352500408251 /* MockOrderedTaskManager.swift */; };
@@ -47,6 +49,8 @@
 		711F251829BDEACD0034F3CF /* TodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		896D55DA29C713F20071CB4B /* LoginWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorkerTests.swift; sourceTree = "<group>"; };
 		896D55DC29C715650071CB4B /* TaskRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryTests.swift; sourceTree = "<group>"; };
+		89B7B3EF29CEFCBD00E15DC8 /* TodoListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListPresenterTests.swift; sourceTree = "<group>"; };
+		89B7B3F229CEFCF500E15DC8 /* TodoListViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewControllerSpy.swift; sourceTree = "<group>"; };
 		E09C716C29CB1E1D007A2DB1 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaskManagerPackage; path = ../Framework/TaskManagerPackage; sourceTree = "<group>"; };
 		E71EFF0D29C72B7D00A55869 /* SectionForTaskManagerAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionForTaskManagerAdapterTests.swift; sourceTree = "<group>"; };
 		E7C9F28429CA352500408251 /* MockOrderedTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOrderedTaskManager.swift; sourceTree = "<group>"; };
@@ -95,12 +99,30 @@
 		896D55D929C713BF0071CB4B /* TodoListTests */ = {
 			isa = PBXGroup;
 			children = (
+				89B7B3EE29CEFC8A00E15DC8 /* TodoListScene */,
 				E71EFF0D29C72B7D00A55869 /* SectionForTaskManagerAdapterTests.swift */,
 				896D55DC29C715650071CB4B /* TaskRepositoryTests.swift */,
 				896D55DA29C713F20071CB4B /* LoginWorkerTests.swift */,
 				E7C9F28429CA352500408251 /* MockOrderedTaskManager.swift */,
 			);
 			path = TodoListTests;
+			sourceTree = "<group>";
+		};
+		89B7B3EE29CEFC8A00E15DC8 /* TodoListScene */ = {
+			isa = PBXGroup;
+			children = (
+				89B7B3F129CEFCCB00E15DC8 /* TestDoubles */,
+				89B7B3EF29CEFCBD00E15DC8 /* TodoListPresenterTests.swift */,
+			);
+			path = TodoListScene;
+			sourceTree = "<group>";
+		};
+		89B7B3F129CEFCCB00E15DC8 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				89B7B3F229CEFCF500E15DC8 /* TodoListViewControllerSpy.swift */,
+			);
+			path = TestDoubles;
 			sourceTree = "<group>";
 		};
 		E09C716B29CB1E1D007A2DB1 /* Packages */ = {
@@ -327,7 +349,9 @@
 				E7C9F28529CA352500408251 /* MockOrderedTaskManager.swift in Sources */,
 				896D55DD29C715650071CB4B /* TaskRepositoryTests.swift in Sources */,
 				E71EFF0E29C72B7D00A55869 /* SectionForTaskManagerAdapterTests.swift in Sources */,
+				89B7B3F329CEFCF500E15DC8 /* TodoListViewControllerSpy.swift in Sources */,
 				896D55DB29C713F20071CB4B /* LoginWorkerTests.swift in Sources */,
+				89B7B3F029CEFCBD00E15DC8 /* TodoListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
