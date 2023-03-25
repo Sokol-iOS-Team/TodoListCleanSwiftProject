@@ -11,10 +11,12 @@ import XCTest
 final class LoginInteractorTests: XCTestCase {
 	
 	// MARK: - Internal Properties
+	
 	private let worker = LoginWorkerSpy()
 	private let presenter = LoginPresenterSpy()
 	
 	// MARK: - Internal Methods
+	
 	func test_login_withValidRequest_shouldSuccessfullyLoggedIn() {
 		let sut = makeSut()
 		let request = LoginModels.Request(login: "validEmail", password: "validPass")
@@ -27,6 +29,7 @@ final class LoginInteractorTests: XCTestCase {
 }
 
 // MARK: - Making sut
+
 private extension LoginInteractorTests {
 	func makeSut() -> LoginInteractor {
 		LoginInteractor(worker: worker, presenter: presenter)
