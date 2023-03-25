@@ -36,7 +36,8 @@ final class TaskManagerTests: XCTestCase {
 		
 		XCTAssertTrue(
 			(sut.allTasks() as Any) is [Task],
-			"Обекты в возвращаемом массиве Tasks не соответсвуют типу Task.")
+			"Обекты в возвращаемом массиве Tasks не соответсвуют типу Task."
+		)
 	}
 
 	// MARK: - func completedTasks()
