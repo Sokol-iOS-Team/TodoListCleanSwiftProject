@@ -15,7 +15,9 @@
 cd ~/Developer
 git clone https://github.com/Sokol-iOS-Team/TodoListCleanSwiftProject.git
 cd ./TodoList
-Установка SwiftLint. Скрипт прописан уже в проекте, поэтому достаточно использовать просто brew. Установка происходит посредством команды brew install swiftlint
+Установка SwiftLint.
+Скрипт прописан уже в проекте, поэтому достаточно использовать просто brew. 
+Установка происходит посредством команды brew install swiftlint
 ```
 ## Features
 
