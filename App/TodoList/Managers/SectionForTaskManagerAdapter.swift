@@ -9,7 +9,6 @@ import TaskManagerPackage
 protocol ISectionForTaskManagerAdapter {
 	func getSections() -> [Section]
 	func getTasksForSection(section: Section) -> [Task]
-	func taskSectionAndIndex(task: Task) -> (section: Section, index: Int)?
 	func getSectionIndex(section: Section) -> Int
 	func getSection(forIndex index: Int) -> Section
 }
@@ -63,16 +62,5 @@ final class SectionForTaskManagerAdapter: ISectionForTaskManagerAdapter {
 		case .all:
 			return taskManager.allTasks()
 		}
-	}
-
-	func taskSectionAndIndex(task: Task) -> (section: Section, index: Int)? {
-		for section in sections {
-			if let index = getTasksForSection(section: section).firstIndex(where: { task === $0 }) {
-				return (section, index)
-			} else {
-				return nil
-			}
-		}
-		return nil
 	}
 }

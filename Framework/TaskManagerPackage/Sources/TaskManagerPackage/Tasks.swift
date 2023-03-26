@@ -61,9 +61,15 @@ public final class ImportantTask: Task {
 	/// Приоритет задания.
 	public var taskPriority: TaskPriority
 
-	public init(title: String, taskPriority: TaskPriority, createDate: Date = Date()) {
+	public init(title: String, isComplete: Bool = false, taskPriority: TaskPriority, createDate: Date = Date()) {
 		self.taskPriority = taskPriority
 		self.createDate = createDate
-		super.init(title: title)
+		super.init(title: title, isComplete: isComplete)
+	}
+}
+
+extension Task: Equatable {
+	public static func == (lhs: Task, rhs: Task) -> Bool {
+		lhs === rhs
 	}
 }

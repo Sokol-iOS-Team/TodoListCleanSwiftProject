@@ -9,19 +9,19 @@ import Foundation
 import TaskManagerPackage
 
 protocol ITodoListPresenter {
-	func present(responce: TodoListModel.Response)
+	func present(response: TodoListModel.Response)
 }
 
 class TodoListPresenter: ITodoListPresenter {
-	private weak var viewController: ITodoListViewController!
+	private weak var viewController: ITodoListViewController! // swiftlint:disable:this implicitly_unwrapped_optional
 
 	init(viewController: ITodoListViewController) {
 		self.viewController = viewController
 	}
 
-	func present(responce: TodoListModel.Response) {
+	func present(response: TodoListModel.Response) {
 		var sections = [TodoListModel.ViewModel.Section]()
-		for section in responce.data {
+		for section in response.data {
 			let sectionData = TodoListModel.ViewModel.Section(
 				title: section.section.title,
 				tasks: mapTasksData(tasks: section.tasks )
