@@ -12,16 +12,37 @@ protocol ILoginViewController: AnyObject {
 }
 
 class LoginViewController: UIViewController {
-	var interactor: ILoginInteractor?
-	var router: ILoginRouter?
 
 	@IBOutlet private weak var textFieldLogin: UITextField!
 	@IBOutlet private weak var textFieldPass: UITextField!
-	@IBAction private func buttonLogin(_ sender: Any) {
-		if let email = textFieldLogin.text, let password = textFieldPass.text {
-			let request = LoginModels.Request(login: email, password: password)
-			interactor?.login(request: request)
+	@IBAction private func buttonLogin(_ sender: Any) { login() }
+
+	var interactor: ILoginInteractor?
+	var router: ILoginRouter?
+	
+	var loginText: String {
+		get {
+			textFieldLogin.text ?? ""
 		}
+		
+		set {
+			textFieldLogin.text = newValue
+		}
+	}
+	
+	var passText: String {
+		get {
+			textFieldPass.text ?? ""
+		}
+		
+		set {
+			textFieldPass.text = newValue
+		}
+	}
+	
+	func login() {
+		let request = LoginModels.Request(login: loginText, password: passText)
+		interactor?.login(request: request)
 	}
 }
 
