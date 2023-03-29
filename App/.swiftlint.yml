@@ -36,6 +36,10 @@ opt_in_rules:
   - untyped_error_in_catch
   - vertical_parameter_alignment_on_call
   - vertical_whitespace_closing_braces
+  
+# выключенные правила
+disabled_rules:
+  - trailing_whitespace
 
 # путь к исходникам для проверки кода
 included:
