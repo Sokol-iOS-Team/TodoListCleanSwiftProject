@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7158E6E229D621F100966304 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 7158E6E129D621F100966304 /* PinLayout */; };
 		71B0B5D529D04FFE001CEF09 /* TodoPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5C029D04FFD001CEF09 /* TodoPresenterSpy.swift */; };
 		71B0B5D629D04FFE001CEF09 /* MockSectionForTaskManagerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5C129D04FFD001CEF09 /* MockSectionForTaskManagerAdapter.swift */; };
 		71B0B5D729D04FFE001CEF09 /* TodoListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5C229D04FFD001CEF09 /* TodoListInteractorTests.swift */; };
@@ -109,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7158E6E229D621F100966304 /* PinLayout in Frameworks */,
 				E09C716F29CB1E2A007A2DB1 /* TaskManagerPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +312,7 @@
 			name = TodoList;
 			packageProductDependencies = (
 				E09C716E29CB1E2A007A2DB1 /* TaskManagerPackage */,
+				7158E6E129D621F100966304 /* PinLayout */,
 			);
 			productName = CS2;
 			productReference = F5DAE3BA29A3D29C0054AC5C /* TodoList.app */;
@@ -344,6 +347,9 @@
 				Base,
 			);
 			mainGroup = F5DAE3B129A3D29C0054AC5C;
+			packageReferences = (
+				7158E6E029D621F100966304 /* XCRemoteSwiftPackageReference "PinLayout" */,
+			);
 			productRefGroup = F5DAE3BB29A3D29C0054AC5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -731,7 +737,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		7158E6E029D621F100966304 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		7158E6E129D621F100966304 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7158E6E029D621F100966304 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
 		E09C716E29CB1E2A007A2DB1 /* TaskManagerPackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TaskManagerPackage;
