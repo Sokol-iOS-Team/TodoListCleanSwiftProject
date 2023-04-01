@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PinLayout
 
 protocol ITodoListViewController: AnyObject {
 	func render(viewData: TodoListModel.ViewModel)
@@ -24,6 +25,12 @@ final class TodoListViewController: UITableViewController {
 		tableView.dataSource = self
 		interactor?.fetchData()
 	}
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        self.tableView.pin.all()
+    }
 
 	// MARK: - Table view data source
 	override func numberOfSections(in tableView: UITableView) -> Int {
