@@ -5,6 +5,7 @@
 //  Created by Kirill Leonov on 20.02.2023.
 //
 import TaskManagerPackage
+import Foundation
 
 protocol ISectionForTaskManagerAdapter {
 	func getSections() -> [Section]
@@ -21,11 +22,11 @@ enum Section: CaseIterable {
 	var title: String {
 		switch self {
 		case .completed:
-			return "Completed"
+			return NSLocalizedString("TodoList.completedSection", comment: "")
 		case .uncompleted:
-			return "Uncompleted"
+			return NSLocalizedString("TodoList.uncompletedSection", comment: "")
 		case .all:
-			return "All"
+			return NSLocalizedString("TodoList.allSection", comment: "")
 		}
 	}
 }

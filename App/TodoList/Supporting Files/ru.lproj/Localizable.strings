@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  TodoList
+
+  Created by Владимир Свиридов on 02.04.2023.
+  
+*/
+
+"Authorization.authorization" = "Войти";
+
+"TodoList.title" = "Список задач";
+"TodoList.completedSection" = "Завершенные";
+"TodoList.uncompletedSection" = "Незавершенные";
+"TodoList.allSection" = "Все";
+"TodoList.deadline" = "Срок выполнения:";
