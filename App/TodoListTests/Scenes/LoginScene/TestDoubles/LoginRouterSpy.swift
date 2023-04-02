@@ -14,7 +14,6 @@ class LoginRouterSpy: ILoginRouter {
 	private(set) var isCalledShowError = false
 	private(set) var isCalledRouteToTodoList = false
 
-		
 	// MARK: - Internal Methods
 	
 	func routeToTodoList() {

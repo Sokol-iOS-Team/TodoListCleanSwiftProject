@@ -78,7 +78,7 @@ final class TodoListPresenterTests: XCTestCase {
 					regularTaskViewModel.isDone,
 					"Ошибка в модели данных: задача должна отображаться, как завершеная"
 				)
-			case .importantTask(_):
+			case .importantTask(_): // swiftlint:disable:this empty_enum_arguments
 				XCTFail("Ошибка в модели данных: важная задача должна отсутствовать")
 			}
 		} else {
@@ -96,7 +96,7 @@ final class TodoListPresenterTests: XCTestCase {
 
 		if let task = viewController.viewModel.tasksBySections[0].tasks.first {
 			switch task {
-			case .regularTask(_):
+			case .regularTask(_): // swiftlint:disable:this empty_enum_arguments
 				XCTFail("Ошибка в модели данных: регулярная задача должна отсутствовать")
 			case .importantTask(let importantTaskViewModel):
 				XCTAssertEqual(
