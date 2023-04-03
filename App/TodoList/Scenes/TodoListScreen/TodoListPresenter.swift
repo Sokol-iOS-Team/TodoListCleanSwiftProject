@@ -44,7 +44,7 @@ class TodoListPresenter: ITodoListPresenter {
 				name: task.title,
 				isDone: task.isComplete,
 				isOverdue: task.deadLine < Date(),
-				deadLine: "Deadline: \(task.deadLine)",
+				deadLine: "\(NSLocalizedString("TodoList.deadline", comment: "")) \(task.deadLine)",
 				priority: "\(task.taskPriority)"
 			)
 			return .importantTask(result)

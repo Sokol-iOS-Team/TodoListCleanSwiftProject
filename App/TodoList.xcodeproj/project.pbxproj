@@ -25,8 +25,12 @@
 		71B0B5E329D04FFE001CEF09 /* TodoListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5D229D04FFE001CEF09 /* TodoListPresenterTests.swift */; };
 		71B0B5E429D04FFE001CEF09 /* TodoListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5D429D04FFE001CEF09 /* TodoListViewControllerSpy.swift */; };
 		E09C716F29CB1E2A007A2DB1 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = E09C716E29CB1E2A007A2DB1 /* TaskManagerPackage */; };
+    2.6-AddLocalizableStrings-Vladimir
+		E7A5EDCF29D9FA9A0044240D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A5EDD129D9FA9A0044240D /* Localizable.strings */; };
+
 		E0F4939829D6E9F80018C29E /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F4939729D6E9F80018C29E /* UIViewController+Preview.swift */; };
 		E0F4939A29D6ECD00018C29E /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F4939929D6ECD00018C29E /* Sizes.swift */; };
+    Test
 		F551A17C29B9CF9500C006AF /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A17B29B9CF9500C006AF /* LoginRouter.swift */; };
 		F551A19229B9CFEB00C006AF /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A18429B9CFEB00C006AF /* TodoListViewController.swift */; };
 		F551A19329B9CFEB00C006AF /* TodoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F551A18529B9CFEB00C006AF /* TodoListPresenter.swift */; };
@@ -76,8 +80,14 @@
 		71B0B5D229D04FFE001CEF09 /* TodoListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListPresenterTests.swift; sourceTree = "<group>"; };
 		71B0B5D429D04FFE001CEF09 /* TodoListViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewControllerSpy.swift; sourceTree = "<group>"; };
 		E09C716C29CB1E1D007A2DB1 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaskManagerPackage; path = ../Framework/TaskManagerPackage; sourceTree = "<group>"; };
+    2.6-AddLocalizableStrings-Vladimir
+		E7A5EDD029D9FA9A0044240D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E7A5EDD329D9FAE00044240D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E7A5EDD429D9FB2E0044240D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+    
 		E0F4939729D6E9F80018C29E /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		E0F4939929D6ECD00018C29E /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+    Test
 		F551A17B29B9CF9500C006AF /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		F551A18429B9CFEB00C006AF /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		F551A18529B9CFEB00C006AF /* TodoListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
@@ -198,12 +208,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+    2.6-AddLocalizableStrings-Vladimir
+		E7A5EDD529D9FB940044240D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5DAE3C629A3D29D0054AC5C /* Assets.xcassets */,
+				F5DAE3C829A3D29D0054AC5C /* LaunchScreen.storyboard */,
+				F5DAE3CB29A3D29D0054AC5C /* Info.plist */,
+				E7A5EDD129D9FA9A0044240D /* Localizable.strings */,
+			);
+			path = "Supporting Files";
+    
 		E0F4939629D6E9B80018C29E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E0F4939729D6E9F80018C29E /* UIViewController+Preview.swift */,
 			);
 			path = Extensions;
+    Test
 			sourceTree = "<group>";
 		};
 		F551A18229B9CFEB00C006AF /* Scenes */ = {
@@ -273,15 +295,19 @@
 		F5DAE3BC29A3D29C0054AC5C /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				E7A5EDD529D9FB940044240D /* Supporting Files */,
 				F551A18D29B9CFEB00C006AF /* Managers */,
 				F551A18229B9CFEB00C006AF /* Scenes */,
 				E0F4939629D6E9B80018C29E /* Extensions */,
 				F5DAE3BD29A3D29C0054AC5C /* AppDelegate.swift */,
 				F5DAE3BF29A3D29C0054AC5C /* SceneDelegate.swift */,
+        2.6-AddLocalizableStrings-Vladimir
+        
 				E0F4939929D6ECD00018C29E /* Sizes.swift */,
 				F5DAE3C629A3D29D0054AC5C /* Assets.xcassets */,
 				F5DAE3C829A3D29D0054AC5C /* LaunchScreen.storyboard */,
 				F5DAE3CB29A3D29D0054AC5C /* Info.plist */,
+        Test
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -356,6 +382,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = F5DAE3B129A3D29C0054AC5C;
 			packageReferences = (
@@ -384,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DAE3CA29A3D29D0054AC5C /* LaunchScreen.storyboard in Resources */,
+				E7A5EDCF29D9FA9A0044240D /* Localizable.strings in Resources */,
 				F5DAE3C729A3D29D0054AC5C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,10 +499,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E7A5EDD129D9FA9A0044240D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7A5EDD029D9FA9A0044240D /* en */,
+				E7A5EDD329D9FAE00044240D /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F5DAE3C829A3D29D0054AC5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F5DAE3C929A3D29D0054AC5C /* Base */,
+				E7A5EDD429D9FB2E0044240D /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -537,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -597,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -656,7 +696,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TodoList/Info.plist;
+				INFOPLIST_FILE = "TodoList/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -686,7 +726,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TodoList/Info.plist;
+				INFOPLIST_FILE = "TodoList/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
