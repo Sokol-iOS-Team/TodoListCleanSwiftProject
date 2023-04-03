@@ -277,7 +277,6 @@
 		F5DAE3BC29A3D29C0054AC5C /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
-				E7A5EDD529D9FB940044240D /* Supporting Files */,
 				F551A18D29B9CFEB00C006AF /* Managers */,
 				F551A18229B9CFEB00C006AF /* Scenes */,
 				E0F4939629D6E9B80018C29E /* Extensions */,
@@ -287,6 +286,7 @@
 				F5DAE3C629A3D29D0054AC5C /* Assets.xcassets */,
 				F5DAE3C829A3D29D0054AC5C /* LaunchScreen.storyboard */,
 				F5DAE3CB29A3D29D0054AC5C /* Info.plist */,
+				E7A5EDD129D9FA9A0044240D /* Localizable.strings */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -675,7 +675,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TodoList/Supporting Files/Info.plist";
+				INFOPLIST_FILE = TodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -705,7 +705,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TodoList/Supporting Files/Info.plist";
+				INFOPLIST_FILE = TodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
