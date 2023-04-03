@@ -116,7 +116,7 @@ final class SectionForTaskManagerAdapterTests: XCTestCase {
 	}
 
 	func test_sectionTitle_withCompletedSection_shouldBeEqualCompletedTitle() {
-		let validTitle = "Completed"
+		let validTitle = NSLocalizedString("TodoList.completedSection", comment: "")
 
 		let result: Section = .completed
 
@@ -124,7 +124,7 @@ final class SectionForTaskManagerAdapterTests: XCTestCase {
 	}
 
 	func test_sectionTitle_withUncompletedSection_shouldBeEqualUncompletedTitle() {
-		let validTitle = "Uncompleted"
+		let validTitle = NSLocalizedString("TodoList.uncompletedSection", comment: "")
 
 		let result: Section = .uncompleted
 
@@ -132,7 +132,7 @@ final class SectionForTaskManagerAdapterTests: XCTestCase {
 	}
 
 	func test_sectionTitle_withAllSection_shouldBeEqualAllTitle() {
-		let validTitle = "All"
+		let validTitle = NSLocalizedString("TodoList.allSection", comment: "")
 
 		let result: Section = .all
 
