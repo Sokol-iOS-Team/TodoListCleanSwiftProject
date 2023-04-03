@@ -46,7 +46,7 @@ class MockSectionForTaskManagerAdapter: ISectionForTaskManagerAdapter {
 	}
 
 	func getSectionIndex(section: Section) -> Int {
-		sections.firstIndex(of: section) ?? 0
+		fatalError("Not implemented")
 	}
 
 	func getSection(forIndex index: Int) -> Section {
