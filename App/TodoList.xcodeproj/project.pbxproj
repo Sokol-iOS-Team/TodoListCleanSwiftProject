@@ -210,6 +210,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E797B69729DB3394007ED17A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5DAE3C629A3D29D0054AC5C /* Assets.xcassets */,
+				F5DAE3C829A3D29D0054AC5C /* LaunchScreen.storyboard */,
+				F5DAE3CB29A3D29D0054AC5C /* Info.plist */,
+				E7A5EDD129D9FA9A0044240D /* Localizable.strings */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		F551A18229B9CFEB00C006AF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,16 +288,13 @@
 		F5DAE3BC29A3D29C0054AC5C /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				E797B69729DB3394007ED17A /* Supporting Files */,
 				F551A18D29B9CFEB00C006AF /* Managers */,
 				F551A18229B9CFEB00C006AF /* Scenes */,
 				E0F4939629D6E9B80018C29E /* Extensions */,
 				F5DAE3BD29A3D29C0054AC5C /* AppDelegate.swift */,
 				F5DAE3BF29A3D29C0054AC5C /* SceneDelegate.swift */,
 				E0F4939929D6ECD00018C29E /* Sizes.swift */,
-				F5DAE3C629A3D29D0054AC5C /* Assets.xcassets */,
-				F5DAE3C829A3D29D0054AC5C /* LaunchScreen.storyboard */,
-				F5DAE3CB29A3D29D0054AC5C /* Info.plist */,
-				E7A5EDD129D9FA9A0044240D /* Localizable.strings */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -675,7 +683,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TodoList/Info.plist;
+				INFOPLIST_FILE = "TodoList/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -705,7 +713,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TodoList/Info.plist;
+				INFOPLIST_FILE = "TodoList/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
