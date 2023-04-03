@@ -10,25 +10,21 @@ import XCTest
 
 class TodoListInteractorTests: XCTestCase {
 
-	// MARK: - Private Properties
-
 	private let presenter = TodoPresenterSpy()
 	private let sectionManager = MockSectionForTaskManagerAdapter()
 
-	// MARK: - Internal Methods
-
-	func test_fetchData_withRespons_shouldCalledPresenter() {
+	func test_fetchData_withResponse_shouldCalledPresenter() {
 		let sut = makeSut()
 
 		sut.fetchData()
 
 		XCTAssertTrue(
 			presenter.isCalledPresent,
-			"Фукция TodoListPresenter present(:) не была вызвана."
+			"Функция TodoListPresenter present(:) не была вызвана."
 			)
 	}
 
-	func test_fetchData_withRespons_responseShouldContainData() {
+	func test_fetchData_withResponse_responseShouldContainData() {
 		let sut = makeSut()
 
 		sut.fetchData()
@@ -39,7 +35,7 @@ class TodoListInteractorTests: XCTestCase {
 		)
 	}
 
-	func test_fetchData_withRespons_responseDataShouldBeArrayOfSectionWithTasksType() {
+	func test_fetchData_withResponse_responseDataShouldBeArrayOfSectionWithTasksType() {
 		let sut = makeSut()
 
 		sut.fetchData()
@@ -65,6 +61,8 @@ class TodoListInteractorTests: XCTestCase {
 		)
 	}
 }
+
+// MARK: - Private
 
 private extension TodoListInteractorTests {
 	func makeSut() -> TodoListInteractor {
