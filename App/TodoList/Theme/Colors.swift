@@ -2,7 +2,7 @@
 //  Colors.swift
 //  TodoList
 //
-//  Created by Kirill Leonov on 31.03.2023.
+//  Created by Kirill Kuchmar on 31.03.2023.
 //
 
 import UIKit
