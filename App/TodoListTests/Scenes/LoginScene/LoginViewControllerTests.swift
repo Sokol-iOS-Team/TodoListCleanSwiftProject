@@ -10,30 +10,27 @@ import XCTest
 
 final class LoginViewControllerTests: XCTestCase {
 	
-	private var interactor: LoginInteractorSpy! // swiftlint:disable:this implicitly_unwrapped_optional
-	private var window: UIWindow! // swiftlint:disable:this implicitly_unwrapped_optional
-	private var sut: LoginViewController! // swiftlint:disable:this implicitly_unwrapped_optional
-	private var router = LoginRouterSpy()
+	private var interactor: LoginInteractorSpy!
+	private var sut: LoginViewController!
+	private var router: LoginRouterSpy!
 	
 	// MARK: - Lifecycle
 	
 	override func setUp() {
 		super.setUp()
 	
-		let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		sut = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+		sut = LoginViewController()
 		interactor = LoginInteractorSpy()
+		router = LoginRouterSpy()
+		
 		sut.interactor = interactor
 		sut.router = router
-		window = UIWindow()
-		window.addSubview(sut.view)
-		RunLoop.current.run(until: Date())
 	}
 	
 	override func tearDown() {
 		sut = nil
 		interactor = nil
-		window = nil
+		router = nil
 		
 		super.tearDown()
 	}
