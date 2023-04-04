@@ -21,8 +21,10 @@ final class TodoListViewController: UITableViewController {
 		super.viewDidLoad()
 		title = NSLocalizedString("TodoList.title", comment: "")
 
-		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.dataSource = self
+		tableView.accessibilityIdentifier = AccessibilityIdentifier.TodoList.tableView
+
 		interactor?.fetchData()
 	}
 
@@ -50,6 +52,7 @@ final class TodoListViewController: UITableViewController {
 		let tasks = viewModel.tasksBySections[indexPath.section].tasks
 		let taskData = tasks[indexPath.row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		cell.accessibilityIdentifier = "cell-\(indexPath.row)-\(indexPath.section)"
 		var contentConfiguration = cell.defaultContentConfiguration()
 
 		switch taskData {

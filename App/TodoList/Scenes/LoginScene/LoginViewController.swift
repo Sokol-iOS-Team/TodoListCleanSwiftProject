@@ -15,9 +15,15 @@ protocol ILoginViewController: AnyObject {
 
 class LoginViewController: UIViewController {
 
-	private lazy var textFieldLogin: UITextField = makeTextField()
-	private lazy var textFieldPass: UITextField = makeTextField()
-	private lazy var buttonLogin: UIButton = makeButtonLogin()
+	private lazy var textFieldLogin: UITextField = makeTextField(
+		accessibilityIdentifier: AccessibilityIdentifier.Login.textFieldLogin
+	)
+	private lazy var textFieldPass: UITextField = makeTextField(
+		accessibilityIdentifier: AccessibilityIdentifier.Login.textFieldPass
+	)
+	private lazy var buttonLogin: UIButton = makeButtonLogin(
+		accessibilityIdentifier: AccessibilityIdentifier.Login.buttonLogin
+	)
 
 	var interactor: ILoginInteractor?
 	var router: ILoginRouter?
@@ -106,7 +112,7 @@ extension LoginViewController {
 			.height(Sizes.L.height)
 	}
 	
-	private func makeTextField() -> UITextField {
+	private func makeTextField(accessibilityIdentifier: String) -> UITextField {
 		let textField = UITextField()
 		
 		textField.backgroundColor = .white
@@ -116,13 +122,14 @@ extension LoginViewController {
 		textField.layer.borderColor = UIColor.lightGray.cgColor
 		textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: Sizes.Padding.half, height: textField.frame.height))
 		textField.leftViewMode = .always
-		
 		textField.translatesAutoresizingMaskIntoConstraints = false
+
+		textField.accessibilityIdentifier = accessibilityIdentifier
 		
 		return textField
 	}
 	
-	func makeButtonLogin() -> UIButton {
+	func makeButtonLogin(accessibilityIdentifier: String) -> UIButton {
 		let button = UIButton()
 		
 		button.configuration = .filled()
@@ -130,8 +137,9 @@ extension LoginViewController {
 		button.configuration?.baseBackgroundColor = .red
 		button.configuration?.title = NSLocalizedString("Authorization.authorization", comment: "")
 		button.addTarget(self, action: #selector(login), for: .touchUpInside)
-		
 		button.translatesAutoresizingMaskIntoConstraints = false
+
+		button.accessibilityIdentifier = accessibilityIdentifier
 		
 		return button
 	}
