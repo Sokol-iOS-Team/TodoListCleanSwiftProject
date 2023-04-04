@@ -27,6 +27,7 @@ final class TodoListPresenterTests: XCTestCase {
 		let regularTask = RegularTask(title: "Regular Task", isComplete: true)
 		let sectionWithTasks = TodoListModel.Response.SectionWithTasks(section: .completed, tasks: [regularTask])
 		let response = TodoListModel.Response(data: [sectionWithTasks])
+        let validSectionTitle = NSLocalizedString("TodoList.completedSection", comment: "")
 
 		sut.present(response: response)
 
@@ -34,7 +35,7 @@ final class TodoListPresenterTests: XCTestCase {
 		let sectionTitle = viewController.viewModel.tasksBySections[0].title
 		let taskCountInSection = viewController.viewModel.tasksBySections[0].tasks.count
 		XCTAssertEqual(sectionCount, 1, "Ошибка в модели данных: некорректное количество секций")
-		XCTAssertEqual(sectionTitle, "Completed", "Ошибка в модели данных: некорректный заголовок секции")
+		XCTAssertEqual(sectionTitle, validSectionTitle, "Ошибка в модели данных: некорректный заголовок секции")
 		XCTAssertEqual(taskCountInSection, 1, "Ошибка в модели данных: некорректное количество задач в секции")
 	}
 
@@ -47,6 +48,7 @@ final class TodoListPresenterTests: XCTestCase {
 			tasks: [importantTask, regularTask]
 		)
 		let response = TodoListModel.Response(data: [sectionWithTasks])
+        let validSectionTitle = NSLocalizedString("TodoList.uncompletedSection", comment: "")
 
 		sut.present(response: response)
 
@@ -54,7 +56,7 @@ final class TodoListPresenterTests: XCTestCase {
 		let sectionTitle = viewController.viewModel.tasksBySections[0].title
 		let taskCountInSection = viewController.viewModel.tasksBySections[0].tasks.count
 		XCTAssertEqual(sectionCount, 1, "Ошибка в модели данных: некорректное количество секций")
-		XCTAssertEqual(sectionTitle, "Uncompleted", "Ошибка в модели данных: некорректный заголовок секции")
+		XCTAssertEqual(sectionTitle, validSectionTitle, "Ошибка в модели данных: некорректный заголовок секции")
 		XCTAssertEqual(taskCountInSection, 2, "Ошибка в модели данных: некорректное количество задач в секции")
 	}
 
@@ -114,7 +116,7 @@ final class TodoListPresenterTests: XCTestCase {
 				)
 				XCTAssertEqual(
 					importantTaskViewModel.deadLine,
-					"Deadline: \(importantTask.deadLine)",
+					"\(NSLocalizedString("TodoList.deadline", comment: "")) \(importantTask.deadLine)",
 					"Ошибка в модели данных: поле даты завершения задачи сформировано некорректно"
 				)
 				XCTAssertEqual(
