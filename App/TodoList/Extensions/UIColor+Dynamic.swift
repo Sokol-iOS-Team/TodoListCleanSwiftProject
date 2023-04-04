@@ -2,12 +2,13 @@
 //  UIColor+Dynamic.swift
 //  TodoList
 //
-//  Created by Kirill Leonov on 31.03.2023.
+//  Created by Kirill Kuchmar on 31.03.2023.
 //
 
 import UIKit
 
 extension UIColor {
+	
 	static func color(light: UIColor, dark: UIColor, highContrastLight: UIColor, highContrastDark: UIColor) -> UIColor {
 		if #available(iOS 13, *) {
 			return .init { traitCollection in
