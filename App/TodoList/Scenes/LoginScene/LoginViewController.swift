@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
 	
 	private func setupUI() {
 		view.backgroundColor = .white
-		title = NSLocalizedString("Authorization.title", comment: "")
+		title = L10n.Authorization.title
 		navigationController?.navigationBar.prefersLargeTitles = true
 	}
 }
@@ -135,7 +135,7 @@ extension LoginViewController {
 		button.configuration = .filled()
 		button.configuration?.cornerStyle = .medium
 		button.configuration?.baseBackgroundColor = .red
-		button.configuration?.title = NSLocalizedString("Authorization.authorization", comment: "")
+		button.configuration?.title = L10n.Authorization.authorization
 		button.addTarget(self, action: #selector(login), for: .touchUpInside)
 		button.translatesAutoresizingMaskIntoConstraints = false
 

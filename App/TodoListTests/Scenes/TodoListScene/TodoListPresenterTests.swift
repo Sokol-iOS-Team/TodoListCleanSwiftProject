@@ -27,7 +27,7 @@ final class TodoListPresenterTests: XCTestCase {
 		let regularTask = RegularTask(title: "Regular Task", isComplete: true)
 		let sectionWithTasks = TodoListModel.Response.SectionWithTasks(section: .completed, tasks: [regularTask])
 		let response = TodoListModel.Response(data: [sectionWithTasks])
-        let validSectionTitle = NSLocalizedString("TodoList.completedSection", comment: "")
+		let validSectionTitle = L10n.TodoList.completedSection
 
 		sut.present(response: response)
 
@@ -48,7 +48,7 @@ final class TodoListPresenterTests: XCTestCase {
 			tasks: [importantTask, regularTask]
 		)
 		let response = TodoListModel.Response(data: [sectionWithTasks])
-        let validSectionTitle = NSLocalizedString("TodoList.uncompletedSection", comment: "")
+		let validSectionTitle = L10n.TodoList.uncompletedSection
 
 		sut.present(response: response)
 
@@ -116,7 +116,7 @@ final class TodoListPresenterTests: XCTestCase {
 				)
 				XCTAssertEqual(
 					importantTaskViewModel.deadLine,
-					"\(NSLocalizedString("TodoList.deadline", comment: "")) \(importantTask.deadLine)",
+					"\(L10n.TodoList.deadline) \(importantTask.deadLine)",
 					"Ошибка в модели данных: поле даты завершения задачи сформировано некорректно"
 				)
 				XCTAssertEqual(
