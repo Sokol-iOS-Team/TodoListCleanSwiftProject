@@ -24,6 +24,7 @@
 		71B0B5E229D04FFE001CEF09 /* SectionForTaskManagerAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5D029D04FFE001CEF09 /* SectionForTaskManagerAdapterTests.swift */; };
 		71B0B5E329D04FFE001CEF09 /* TodoListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5D229D04FFE001CEF09 /* TodoListPresenterTests.swift */; };
 		71B0B5E429D04FFE001CEF09 /* TodoListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5D429D04FFE001CEF09 /* TodoListViewControllerSpy.swift */; };
+		8992719E29DC573800A1B2A5 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992719D29DC573800A1B2A5 /* AccessibilityIdentifier.swift */; };
 		E09C716F29CB1E2A007A2DB1 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = E09C716E29CB1E2A007A2DB1 /* TaskManagerPackage */; };
 		E0F4939829D6E9F80018C29E /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F4939729D6E9F80018C29E /* UIViewController+Preview.swift */; };
 		E0F4939A29D6ECD00018C29E /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F4939929D6ECD00018C29E /* Sizes.swift */; };
@@ -76,6 +77,7 @@
 		71B0B5D029D04FFE001CEF09 /* SectionForTaskManagerAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionForTaskManagerAdapterTests.swift; sourceTree = "<group>"; };
 		71B0B5D229D04FFE001CEF09 /* TodoListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListPresenterTests.swift; sourceTree = "<group>"; };
 		71B0B5D429D04FFE001CEF09 /* TodoListViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewControllerSpy.swift; sourceTree = "<group>"; };
+		8992719D29DC573800A1B2A5 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		E09C716C29CB1E1D007A2DB1 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaskManagerPackage; path = ../Framework/TaskManagerPackage; sourceTree = "<group>"; };
 		E0F4939729D6E9F80018C29E /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		E0F4939929D6ECD00018C29E /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				F5DAE3BD29A3D29C0054AC5C /* AppDelegate.swift */,
 				F5DAE3BF29A3D29C0054AC5C /* SceneDelegate.swift */,
 				E0F4939929D6ECD00018C29E /* Sizes.swift */,
+				8992719D29DC573800A1B2A5 /* AccessibilityIdentifier.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				F551A19329B9CFEB00C006AF /* TodoListPresenter.swift in Sources */,
 				F551A1AB29BA1E9900C006AF /* TodoListInteractor.swift in Sources */,
 				F551A17C29B9CF9500C006AF /* LoginRouter.swift in Sources */,
+				8992719E29DC573800A1B2A5 /* AccessibilityIdentifier.swift in Sources */,
 				F551A19529B9CFEB00C006AF /* LoginInteractor.swift in Sources */,
 				F551A19729B9CFEB00C006AF /* LoginViewController.swift in Sources */,
 			);

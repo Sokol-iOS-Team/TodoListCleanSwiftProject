@@ -14,15 +14,18 @@ protocol ITodoListViewController: AnyObject {
 
 final class TodoListViewController: UITableViewController {
 
+	// MARK: - Internal Properties
+
 	var viewModel: TodoListModel.ViewModel = TodoListModel.ViewModel(tasksBySections: [])
 	var interactor: ITodoListInteractor?
+
+	// MARK: - Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		title = NSLocalizedString("TodoList.title", comment: "")
 
-		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-		tableView.dataSource = self
+		configureTableView()
 		interactor?.fetchData()
 	}
 
@@ -32,7 +35,16 @@ final class TodoListViewController: UITableViewController {
         self.tableView.pin.all()
     }
 
-	// MARK: - Table view data source
+	// MARK: - Private
+
+	private func configureTableView() {
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.dataSource = self
+		tableView.accessibilityIdentifier = AccessibilityIdentifier.TodoList.tableView
+	}
+
+	// MARK: - TableViewDataSource
+	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		viewModel.tasksBySections.count
 	}
@@ -50,6 +62,7 @@ final class TodoListViewController: UITableViewController {
 		let tasks = viewModel.tasksBySections[indexPath.section].tasks
 		let taskData = tasks[indexPath.row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		cell.accessibilityIdentifier = "cell-\(indexPath.row)-\(indexPath.section)"
 		var contentConfiguration = cell.defaultContentConfiguration()
 
 		switch taskData {
@@ -75,10 +88,14 @@ final class TodoListViewController: UITableViewController {
 		return cell
 	}
 
+	// MARK: - TableViewDelegate
+
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		interactor?.didTaskSelected(atIndex: TodoListModel.Request.TaskSelected(indexPath: indexPath))
 	}
 }
+
+// MARK: - ITodoListViewController
 
 extension TodoListViewController: ITodoListViewController {
 	func render(viewData: TodoListModel.ViewModel) {
