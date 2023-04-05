@@ -22,11 +22,11 @@ enum Section: CaseIterable {
 	var title: String {
 		switch self {
 		case .completed:
-			return NSLocalizedString("TodoList.completedSection", comment: "")
+			return L10n.TodoList.completedSection // NSLocalizedString("TodoList.completedSection", comment: "")
 		case .uncompleted:
-			return NSLocalizedString("TodoList.uncompletedSection", comment: "")
+			return L10n.TodoList.uncompletedSection // NSLocalizedString("TodoList.uncompletedSection", comment: "")
 		case .all:
-			return NSLocalizedString("TodoList.allSection", comment: "")
+			return L10n.TodoList.allSection // NSLocalizedString("TodoList.allSection", comment: "")
 		}
 	}
 }

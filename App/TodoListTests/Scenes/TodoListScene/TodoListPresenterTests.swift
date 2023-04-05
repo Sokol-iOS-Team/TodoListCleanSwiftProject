@@ -116,7 +116,7 @@ final class TodoListPresenterTests: XCTestCase {
 				)
 				XCTAssertEqual(
 					importantTaskViewModel.deadLine,
-					"\(NSLocalizedString("TodoList.deadline", comment: "")) \(importantTask.deadLine)",
+					"\(L10n.TodoList.deadline) \(importantTask.deadLine)",
 					"Ошибка в модели данных: поле даты завершения задачи сформировано некорректно"
 				)
 				XCTAssertEqual(

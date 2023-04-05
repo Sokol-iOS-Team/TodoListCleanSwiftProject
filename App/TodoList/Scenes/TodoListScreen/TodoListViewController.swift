@@ -19,7 +19,7 @@ final class TodoListViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = NSLocalizedString("TodoList.title", comment: "")
+		title = L10n.TodoList.title
 
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.dataSource = self
