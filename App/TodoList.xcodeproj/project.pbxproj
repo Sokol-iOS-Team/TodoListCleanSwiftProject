@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710D19A629DEB86200A2C072 /* LoginInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710D19A529DEB86200A2C072 /* LoginInteractorSpy.swift */; };
 		7154B5F029DCC250005CFDED /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 7154B5EB29DCC250005CFDED /* swiftgen.sh */; };
 		7154B5F129DCC250005CFDED /* Assets.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 7154B5ED29DCC250005CFDED /* Assets.stencil */; };
 		7154B5F229DCC250005CFDED /* Strings.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 7154B5EE29DCC250005CFDED /* Strings.stencil */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		710D19A529DEB86200A2C072 /* LoginInteractorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpy.swift; sourceTree = "<group>"; };
 		711F251829BDEACD0034F3CF /* TodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7154B5EB29DCC250005CFDED /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		7154B5ED29DCC250005CFDED /* Assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Assets.stencil; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				71B0B5C729D04FFD001CEF09 /* LoginWorkerSpy.swift */,
+				710D19A529DEB86200A2C072 /* LoginInteractorSpy.swift */,
 				71B0B5C829D04FFD001CEF09 /* LoginPresenterSpy.swift */,
 				71B0B5C929D04FFD001CEF09 /* LoginRouterSpy.swift */,
 				71B0B5CE29D04FFD001CEF09 /* LoginViewControllerSpy.swift */,
@@ -513,6 +516,7 @@
 				71B0B5E429D04FFE001CEF09 /* TodoListViewControllerSpy.swift in Sources */,
 				71B0B5D729D04FFE001CEF09 /* TodoListInteractorTests.swift in Sources */,
 				71B0B5DD29D04FFE001CEF09 /* LoginInteractorTests.swift in Sources */,
+				710D19A629DEB86200A2C072 /* LoginInteractorSpy.swift in Sources */,
 				71B0B5D929D04FFE001CEF09 /* LoginWorkerTests.swift in Sources */,
 				71B0B5DC29D04FFE001CEF09 /* LoginRouterSpy.swift in Sources */,
 				71B0B5D529D04FFE001CEF09 /* TodoPresenterSpy.swift in Sources */,

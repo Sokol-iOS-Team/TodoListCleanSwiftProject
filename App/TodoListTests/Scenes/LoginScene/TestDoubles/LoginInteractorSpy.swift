@@ -10,7 +10,7 @@ import Foundation
 
 class LoginInteractorSpy: ILoginInteractor {
 	
-	//MARK: Internal Properties
+	// MARK: Internal Properties
 	
 	private(set) var isCalledLogin = false
 	

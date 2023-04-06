@@ -7,7 +7,7 @@
 
 import XCTest
 @testable import TodoList
-
+// swiftlint:disable all
 final class LoginViewControllerTests: XCTestCase {
 	
 	private var interactor: LoginInteractorSpy!
