@@ -19,7 +19,7 @@ class LoginPresenter: ILoginPresenter {
 	}
 
 	func present(responce: LoginModels.Response) {
-		let viewModel: LoginModels.ViewModel = responce.success ? .success : .failure("Неверный логин или пароль.")
+		let viewModel: LoginModels.ViewModel = responce.success ? .success : .failure(L10n.Authorization.wrongCredentials)
 		viewController?.render(viewModel: viewModel)
 	}
 }

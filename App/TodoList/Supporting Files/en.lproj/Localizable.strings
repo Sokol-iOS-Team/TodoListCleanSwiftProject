@@ -8,6 +8,7 @@
 
 "Authorization.authorization" = "Enter";
 "Authorization.title" = "Authorization";
+"Authorization.wrongCredentials" = "Wrong login or password";
 
 "TodoList.title" = "TodoList";
 "TodoList.completedSection" = "Completed";
