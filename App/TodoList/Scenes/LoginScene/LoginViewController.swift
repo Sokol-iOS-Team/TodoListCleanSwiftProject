@@ -6,8 +6,11 @@
 //
 
 import UIKit
-import SwiftUI
 import PinLayout
+
+#if DEBUG
+import SwiftUI
+#endif
 
 protocol ILoginViewController: AnyObject {
 	func render(viewModel: LoginModels.ViewModel)
@@ -145,6 +148,7 @@ extension LoginViewController {
 	}
 }
 
+#if DEBUG
 struct ViewControllerProvider: PreviewProvider {
 	static var previews: some View {
 		Group {
@@ -152,3 +156,4 @@ struct ViewControllerProvider: PreviewProvider {
 		}
 	}
 }
+#endif

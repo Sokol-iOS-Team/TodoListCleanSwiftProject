@@ -11,6 +11,8 @@ internal enum L10n {
     internal static let authorization = L10n.tr("Localizable", "Authorization.authorization")
     /// Authorization
     internal static let title = L10n.tr("Localizable", "Authorization.title")
+    /// Wrong login or password
+    internal static let wrongCredentials = L10n.tr("Localizable", "Authorization.wrongCredentials")
   }
 
   internal enum TodoList {
