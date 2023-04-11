@@ -2,7 +2,7 @@
 //  LoginSceneUITest.swift
 //  TodoListUITests
 //
-//  Created by Kirill Leonov on 03.04.2023.
+//  Created by Владимир Свиридов on 09.04.2023, Updated by Кирилл Кучмар on 11.04.2023.
 //
 
 import XCTest
