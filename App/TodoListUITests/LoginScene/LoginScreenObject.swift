@@ -11,9 +11,9 @@ class LoginScreenObject: BaseScreenObject {
 	
 	// MARK: - Private properties
 	
-	private lazy var textFieldLogin = app.textFields [AccessibilityIdentifier.textFieldLogin.rawValue]
-	private lazy var textFieldPass = app.textFields[AccessibilityIdentifier.textFieldPass.rawValue]
-	private lazy var loginButton = app.buttons[AccessibilityIdentifier.buttonLogin.rawValue]
+	private lazy var textFieldLogin = app.textFields [AccessibilityIdentifier.Login.textFieldLogin]
+	private lazy var textFieldPass = app.textFields[AccessibilityIdentifier.Login.textFieldPass]
+	private lazy var loginButton = app.buttons[AccessibilityIdentifier.Login.buttonLogin]
 	
 	// MARK: - ScreenObject Methods
 	
