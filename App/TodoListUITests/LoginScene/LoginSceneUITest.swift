@@ -26,7 +26,7 @@ final class LoginSceneUITest: XCTestCase {
 
 		buttonLogin.tap()
 
-		XCTAssertTrue(app.tables.staticTexts[L10n.TodoList.completedSection].exists)
+		XCTAssertTrue(app.tables[AccessibilityIdentifier.TodoList.tableView].exists)
 	}
 
 	func test_login_withInvalidCredentials_shouldBeFailure() {
