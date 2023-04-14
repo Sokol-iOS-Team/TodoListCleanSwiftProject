@@ -9,39 +9,45 @@ import UIKit
 import PinLayout
 
 class SectionHeaderView: UITableViewHeaderFooterView {
+	
+	// MARK: - Private properties
+
 	private lazy var headerLabel = makeLabel()
 
+	// MARK: - Lifecycle
+	
 	override init(reuseIdentifier: String?) {
 		super.init(reuseIdentifier: reuseIdentifier)
+		
+		addSubviews()
 	}
 
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
-		setupContainerView()
 	}
 	
 	override func layoutSubviews() {
-		setupContainerView()
-	}
-
-	private func setupContainerView() {
-		self.addSubview(headerLabel)
-		headerLabel.translatesAutoresizingMaskIntoConstraints = false
 		headerLabel
 			.pin
 			.top()
 			.bottom()
 			.right()
-			.left(20)
-	}
-
+			.left(20)	}
+	
+	// MARK: - Internal methods
+	
 	func configure(text: String, accessibilityIdentifier: String) {
 		headerLabel.text = text
 		headerLabel.accessibilityIdentifier = accessibilityIdentifier
 		layoutIfNeeded()
 	}
 	
-	func makeLabel() -> UILabel {
+	// MARK: - Private methods
+	private func addSubviews() {
+		addSubview(headerLabel)
+	}
+
+	private func makeLabel() -> UILabel {
 		let label = UILabel()
 		label.font = UIFont.preferredFont(forTextStyle: .headline)
 		label.textColor = .lightGray

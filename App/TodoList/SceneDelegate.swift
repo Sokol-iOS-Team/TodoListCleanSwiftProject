@@ -17,16 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	) {
 		guard let scene = (scene as? UIWindowScene) else { return }
 		let window = UIWindow(windowScene: scene)
+		window.rootViewController = createRootViewController()
+		window.makeKeyAndVisible()
 		
-		if ProcessInfo.processInfo.environment["UITEST_START_FROM_TODOLISTSCREEN"] != nil {
-			window.rootViewController = UINavigationController(rootViewController: assemblyForSecondScreenUITests())
-			window.makeKeyAndVisible()
-		} else {
-			window.rootViewController = UINavigationController(rootViewController: assembly())
-			window.makeKeyAndVisible()
-		}
-
 		self.window = window
+	}
+	
+	private func createRootViewController() -> UIViewController {
+	#if DEBUG
+		if ProcessInfo.processInfo.environment["UITEST_START_FROM_TODOLISTSCREEN"] == "1" {
+			return UINavigationController(rootViewController: assemblyForSecondScreenUITests())
+		} else {
+					return UINavigationController(rootViewController: assembly())
+		}
+	#endif
+		return UINavigationController(rootViewController: assembly())
 	}
 
 	func assembly() -> UIViewController {
@@ -46,17 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 	
 	func assemblyForSecondScreenUITests() -> UIViewController {
-		let loginViewController = LoginAssembler().assembly()
 		let todoListViewController = TodoListAssembler().assembly()
-
-		let router = LoginRouter(
-			loginViewController: loginViewController,
-			todoListViewController: todoListViewController
-		)
-
-		if let loginViewController = loginViewController as? LoginViewController {
-			loginViewController.router = router
-		}
 
 		return todoListViewController
 	}

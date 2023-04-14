@@ -18,7 +18,5 @@ final class TodoListUITests: XCTestCase {
 
 		todoListScreen
 			.isTodoListScreen()
-		
-		
 	}
 }
