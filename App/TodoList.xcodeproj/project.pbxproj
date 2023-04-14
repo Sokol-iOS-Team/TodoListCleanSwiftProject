@@ -32,7 +32,13 @@
 		71B0B5E329D04FFE001CEF09 /* TodoListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5D229D04FFE001CEF09 /* TodoListPresenterTests.swift */; };
 		71B0B5E429D04FFE001CEF09 /* TodoListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0B5D429D04FFE001CEF09 /* TodoListViewControllerSpy.swift */; };
 		8992719E29DC573800A1B2A5 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992719D29DC573800A1B2A5 /* AccessibilityIdentifier.swift */; };
+		E03CE8C729E57E8600554227 /* Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE8C629E57E8600554227 /* Predicates.swift */; };
+		E03CE8C929E57EB300554227 /* BaseScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE8C829E57EB300554227 /* BaseScreenObject.swift */; };
+		E03CE8CD29E57F1000554227 /* TodoListScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE8CC29E57F1000554227 /* TodoListScreenObject.swift */; };
+		E03CE8CF29E5832200554227 /* TodoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE8CE29E5832200554227 /* TodoListUITests.swift */; };
 		E09C716F29CB1E2A007A2DB1 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = E09C716E29CB1E2A007A2DB1 /* TaskManagerPackage */; };
+		E0CB978929E587AE004F6F67 /* LoginScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB978829E587AE004F6F67 /* LoginScreenObject.swift */; };
+		E0DA4D4229E59D02000A9516 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA4D4129E59D02000A9516 /* SectionHeaderView.swift */; };
 		E0F4939829D6E9F80018C29E /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F4939729D6E9F80018C29E /* UIViewController+Preview.swift */; };
 		E0F4939A29D6ECD00018C29E /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F4939929D6ECD00018C29E /* Sizes.swift */; };
 		E72BED2329E305ED009CD99A /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992719D29DC573800A1B2A5 /* AccessibilityIdentifier.swift */; };
@@ -103,7 +109,13 @@
 		71B0B5D229D04FFE001CEF09 /* TodoListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListPresenterTests.swift; sourceTree = "<group>"; };
 		71B0B5D429D04FFE001CEF09 /* TodoListViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewControllerSpy.swift; sourceTree = "<group>"; };
 		8992719D29DC573800A1B2A5 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
+		E03CE8C629E57E8600554227 /* Predicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predicates.swift; sourceTree = "<group>"; };
+		E03CE8C829E57EB300554227 /* BaseScreenObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenObject.swift; sourceTree = "<group>"; };
+		E03CE8CC29E57F1000554227 /* TodoListScreenObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListScreenObject.swift; sourceTree = "<group>"; };
+		E03CE8CE29E5832200554227 /* TodoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListUITests.swift; sourceTree = "<group>"; };
 		E09C716C29CB1E1D007A2DB1 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaskManagerPackage; path = ../Framework/TaskManagerPackage; sourceTree = "<group>"; };
+		E0CB978829E587AE004F6F67 /* LoginScreenObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenObject.swift; sourceTree = "<group>"; };
+		E0DA4D4129E59D02000A9516 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		E0F4939729D6E9F80018C29E /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		E0F4939929D6ECD00018C29E /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		E75B586829E2F0BD00A420D1 /* TodoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +264,33 @@
 			path = TodoListTests;
 			sourceTree = "<group>";
 		};
+		E03CE8C529E57E5500554227 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E03CE8C629E57E8600554227 /* Predicates.swift */,
+				E03CE8C829E57EB300554227 /* BaseScreenObject.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E03CE8CA29E57EC000554227 /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				E0CB978829E587AE004F6F67 /* LoginScreenObject.swift */,
+				E75B587329E2F42E00A420D1 /* LoginSceneUITest.swift */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		E03CE8CB29E57EDF00554227 /* TodoListScene */ = {
+			isa = PBXGroup;
+			children = (
+				E03CE8CC29E57F1000554227 /* TodoListScreenObject.swift */,
+				E03CE8CE29E5832200554227 /* TodoListUITests.swift */,
+			);
+			path = TodoListScene;
+			sourceTree = "<group>";
+		};
 		E09C716B29CB1E1D007A2DB1 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +306,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E0DA4D4029E59CD5000A9516 /* SectionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				E0DA4D4129E59D02000A9516 /* SectionHeaderView.swift */,
+			);
+			path = SectionHeaderView;
+			sourceTree = "<group>";
+		};
 		E0F4939629D6E9B80018C29E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,7 +325,9 @@
 		E75B586929E2F0BD00A420D1 /* TodoListUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E75B587329E2F42E00A420D1 /* LoginSceneUITest.swift */,
+				E03CE8C529E57E5500554227 /* Common */,
+				E03CE8CA29E57EC000554227 /* LoginScene */,
+				E03CE8CB29E57EDF00554227 /* TodoListScene */,
 			);
 			path = TodoListUITests;
 			sourceTree = "<group>";
@@ -307,9 +356,10 @@
 		F551A18329B9CFEB00C006AF /* TodoListScene */ = {
 			isa = PBXGroup;
 			children = (
+				E0DA4D4029E59CD5000A9516 /* SectionHeaderView */,
 				F551A18429B9CFEB00C006AF /* TodoListViewController.swift */,
-				F551A18529B9CFEB00C006AF /* TodoListPresenter.swift */,
 				F551A1AA29BA1E9900C006AF /* TodoListInteractor.swift */,
+				F551A18529B9CFEB00C006AF /* TodoListPresenter.swift */,
 				F551A18629B9CFEB00C006AF /* TodoListModel.swift */,
 				F551A1A829B9EA7100C006AF /* TodoListAssembler.swift */,
 			);
@@ -593,7 +643,12 @@
 			files = (
 				E75B587429E2F42E00A420D1 /* LoginSceneUITest.swift in Sources */,
 				E72BED2429E30EAA009CD99A /* Strings.swift in Sources */,
+				E0CB978929E587AE004F6F67 /* LoginScreenObject.swift in Sources */,
+				E03CE8CF29E5832200554227 /* TodoListUITests.swift in Sources */,
+				E03CE8CD29E57F1000554227 /* TodoListScreenObject.swift in Sources */,
 				E72BED2329E305ED009CD99A /* AccessibilityIdentifier.swift in Sources */,
+				E03CE8C729E57E8600554227 /* Predicates.swift in Sources */,
+				E03CE8C929E57EB300554227 /* BaseScreenObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +667,7 @@
 				F551A1A729B9D51C00C006AF /* LoginAssembler.swift in Sources */,
 				F5DAE3BE29A3D29C0054AC5C /* AppDelegate.swift in Sources */,
 				F551A1A929B9EA7100C006AF /* TodoListAssembler.swift in Sources */,
+				E0DA4D4229E59D02000A9516 /* SectionHeaderView.swift in Sources */,
 				F5DAE3C029A3D29C0054AC5C /* SceneDelegate.swift in Sources */,
 				F551A19229B9CFEB00C006AF /* TodoListViewController.swift in Sources */,
 				E0F4939A29D6ECD00018C29E /* Sizes.swift in Sources */,
@@ -870,6 +926,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;
@@ -900,6 +957,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54ADD7XPN4;

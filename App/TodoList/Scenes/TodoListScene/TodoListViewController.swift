@@ -29,11 +29,11 @@ final class TodoListViewController: UITableViewController {
 		interactor?.fetchData()
 	}
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
 
-        self.tableView.pin.all()
-    }
+		self.tableView.pin.all()
+	}
 
 	// MARK: - Private
 
@@ -48,9 +48,19 @@ final class TodoListViewController: UITableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		viewModel.tasksBySections.count
 	}
+	
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let header = SectionHeaderView()
+		let identifier = section == 0
+		? AccessibilityIdentifier.TodoList.firstSectionHeader
+		: AccessibilityIdentifier.TodoList.secondSectionHeader
+		
+		header.configure(
+			text: viewModel.tasksBySections[section].title,
+			accessibilityIdentifier: identifier
+		)
 
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		viewModel.tasksBySections[section].title
+		return header
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

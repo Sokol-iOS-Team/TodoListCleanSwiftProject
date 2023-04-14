@@ -17,11 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	) {
 		guard let scene = (scene as? UIWindowScene) else { return }
 		let window = UIWindow(windowScene: scene)
-
-		window.rootViewController = UINavigationController(rootViewController: assembly())
+		window.rootViewController = createRootViewController()
 		window.makeKeyAndVisible()
-
+		
 		self.window = window
+	}
+	
+	private func createRootViewController() -> UIViewController {
+	#if DEBUG
+		if ProcessInfo.processInfo.environment["UITEST_START_FROM_TODOLISTSCREEN"] == "1" {
+			return UINavigationController(rootViewController: assemblyForSecondScreenUITests())
+		} else {
+					return UINavigationController(rootViewController: assembly())
+		}
+	#endif
+		return UINavigationController(rootViewController: assembly())
 	}
 
 	func assembly() -> UIViewController {
@@ -38,5 +48,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		}
 
 		return loginViewController
+	}
+	
+	func assemblyForSecondScreenUITests() -> UIViewController {
+		let todoListViewController = TodoListAssembler().assembly()
+
+		return todoListViewController
 	}
 }

@@ -7,12 +7,11 @@
 
 import XCTest
 @testable import TodoList
-// swiftlint:disable all
 final class LoginViewControllerTests: XCTestCase {
 	
-	private var interactor: LoginInteractorSpy!
-	private var sut: LoginViewController!
-	private var router: LoginRouterSpy!
+	private var interactor: LoginInteractorSpy! // swiftlint:disable:this implicitly_unwrapped_optional
+	private var sut: LoginViewController! // swiftlint:disable:this implicitly_unwrapped_optional
+	private var router: LoginRouterSpy! // swiftlint:disable:this implicitly_unwrapped_optional
 	
 	// MARK: - Lifecycle
 	

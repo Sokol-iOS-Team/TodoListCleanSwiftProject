@@ -14,5 +14,7 @@ enum AccessibilityIdentifier {
 
 	enum TodoList {
 		static let tableView = "tableView"
+		static let firstSectionHeader = "firstSectionHeader"
+		static let secondSectionHeader = "secondSectionHeader"
 	}
 }
