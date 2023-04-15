@@ -11,40 +11,30 @@ final class LoginSceneUITest: XCTestCase {
  
 	func test_login_withValidCredentials_shouldBeSuccess() {
 		let app = XCUIApplication()
+		let loginScreen = LoginScreenObject(app: app)
+
 		app.launch()
 
-		let textFieldLogin = app.textFields[AccessibilityIdentifier.Login.textFieldLogin]
-		let textFieldPass = app.textFields[AccessibilityIdentifier.Login.textFieldPass]
-
-		let buttonLogin = app.buttons[AccessibilityIdentifier.Login.buttonLogin]
-
-		textFieldLogin.tap()
-		textFieldLogin.typeText("1")
-
-		textFieldPass.tap()
-		textFieldPass.typeText("1")
-
-		buttonLogin.tap()
+		loginScreen
+			.isLoginScreen()
+			.set(password: "1")
+			.set(login: "1")
+			.login()
 
 		XCTAssertTrue(app.tables[AccessibilityIdentifier.TodoList.tableView].exists)
 	}
 
 	func test_login_withInvalidCredentials_shouldBeFailure() {
 		let app = XCUIApplication()
+		let loginScreen = LoginScreenObject(app: app)
+
 		app.launch()
 
-		let textFieldLogin = app.textFields[AccessibilityIdentifier.Login.textFieldLogin]
-		let textFieldPass = app.textFields[AccessibilityIdentifier.Login.textFieldPass]
-
-		let buttonLogin = app.buttons[AccessibilityIdentifier.Login.buttonLogin]
-
-		textFieldLogin.tap()
-		textFieldLogin.typeText("WrongName")
-
-		textFieldPass.tap()
-		textFieldPass.typeText("WrongPassword")
-
-		buttonLogin.tap()
+		loginScreen
+			.isLoginScreen()
+			.set(password: "WrongPass")
+			.set(login: "WrongLogin")
+			.login()
 
 		XCTAssertTrue(app.alerts.staticTexts[L10n.Authorization.wrongCredentials].exists)
 	}

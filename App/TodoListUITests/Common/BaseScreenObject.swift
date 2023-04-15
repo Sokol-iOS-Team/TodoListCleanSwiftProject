@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import XCTest
 
 class BaseScreenObject {

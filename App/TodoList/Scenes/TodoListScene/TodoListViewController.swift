@@ -72,7 +72,7 @@ final class TodoListViewController: UITableViewController {
 		let tasks = viewModel.tasksBySections[indexPath.section].tasks
 		let taskData = tasks[indexPath.row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.accessibilityIdentifier = "cell-\(indexPath.row)-\(indexPath.section)"
+		cell.accessibilityIdentifier = AccessibilityIdentifier.TodoList.tableViewCell(indexPath: indexPath)
 		var contentConfiguration = cell.defaultContentConfiguration()
 
 		switch taskData {
