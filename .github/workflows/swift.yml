@@ -2,7 +2,9 @@ name: Swift
 
 on:
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
+  push:
+    branches: [ "2.8-CI-CD-Artem" ]
     
 jobs:
   build:
