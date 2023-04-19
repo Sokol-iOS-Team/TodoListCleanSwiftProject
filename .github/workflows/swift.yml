@@ -19,4 +19,4 @@ jobs:
         working-directory: 'App'
         run: xcodebuild -project TodoList.xcodeproj -scheme TodoList -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.2'
       - name: Run tests
-        run: xcodebuild test -project TodoList.xcodeproj -scheme TodoListTest -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.2’
+        run: xcodebuild test -project TodoList.xcodeproj -scheme TodoListTest -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.2'
